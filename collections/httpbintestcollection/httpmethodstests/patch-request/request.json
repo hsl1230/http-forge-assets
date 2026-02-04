@@ -1,0 +1,16 @@
+{
+  "id": "patch_request_ml2x1yin4yrg9pj24",
+  "name": "PATCH Request",
+  "method": "PATCH",
+  "url": "{{base_url}}/patch",
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json-patch+json",
+      "enabled": true
+    }
+  ],
+  "body": {
+    "type": "raw"
+  }
+}

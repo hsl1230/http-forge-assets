@@ -1,0 +1,21 @@
+{
+  "id": "test_collection_script_-_post_with_dynamic_data_ml2x1yinrw314bk10",
+  "name": "Test Collection Script - POST with Dynamic Data",
+  "method": "POST",
+  "url": "{{base_url}}/post",
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json",
+      "enabled": true
+    },
+    {
+      "key": "X-Collection-Test",
+      "value": "folder_level_script_test",
+      "enabled": true
+    }
+  ],
+  "body": {
+    "type": "raw"
+  }
+}

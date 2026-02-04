@@ -1,0 +1,53 @@
+{
+  "environment": "test",
+  "requestPath": "http_bin_test_collection_ml2x1yinnovt5k8wq/Authentication Tests",
+  "requestId": "basic_auth_-_test_valid_credentials_ml2x1yin7wjd1ebc2",
+  "method": "GET",
+  "requests": [
+    {
+      "ticket": null,
+      "branch": "succeed",
+      "environment": "test",
+      "sentRequest": {
+        "url": "https://httpbin.org/basic-auth/test_user/test_pass_123",
+        "method": "GET",
+        "headers": {
+          "X-Collection-Global": "HTTP_Forge_Test",
+          "Authorization": "Basic dGVzdF91c2VyOnRlc3RfcGFzc18xMjM="
+        },
+        "body": null,
+        "params": {},
+        "query": {}
+      },
+      "originalConfig": {
+        "path": "{{base_url}}/basic-auth/{{username}}/{{password}}",
+        "params": {},
+        "query": {},
+        "headers": {},
+        "body": null
+      },
+      "settings": {
+        "timeout": 30000,
+        "followRedirects": true,
+        "followOriginalMethod": false,
+        "followAuthHeader": false,
+        "maxRedirects": 10,
+        "strictSSL": true,
+        "decompress": true,
+        "includeCookies": true
+      },
+      "scripts": {
+        "preRequest": "// Pre-request script for Basic Auth\nconsole.log('Starting Basic Auth request...');\nconsole.log('Username:', pm.environment.get('username'));\n\n// Generate timestamp for request tracking\nconst timestamp = new Date().toISOString();\npm.environment.set('request_timestamp', timestamp);\nconsole.log('Request timestamp:', timestamp);\n\n// Validate environment variables\nif (!pm.environment.get('username') || !pm.environment.get('password')) {\n    throw new Error('Username or password environment variables not set');\n}",
+        "postResponse": "// Test script for Basic Auth\npm.test('Status code is 200', function() {\n    pm.response.to.have.status(200);\n});\n\npm.test('Response has valid JSON', function() {\n    pm.response.to.be.json;\n});\n\npm.test('Authentication was successful', function() {\n    const jsonData = pm.response.json();\n    pm.expect(jsonData.authenticated).to.be.true;\n    pm.expect(jsonData.user).to.equal(pm.environment.get('username'));\n});\n\n// Store response data in environment variable\nconst responseTime = pm.response.responseTime;\npm.environment.set('last_response_time', responseTime);\nconsole.log('Response time:', responseTime, 'ms');"
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "time": 245
+      },
+      "method": "GET",
+      "id": "cdd11a79-b54b-4efe-8989-c0a438bc6375",
+      "timestamp": 1770178166322
+    }
+  ]
+}

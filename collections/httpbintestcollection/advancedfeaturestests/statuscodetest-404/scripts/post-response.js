@@ -1,0 +1,4 @@
+// Test 404 status code
+pm.test('Status code is 404', function() {
+    pm.response.to.have.status(404);
+});

@@ -1,0 +1,13 @@
+{
+  "id": "delete_request_ml2x1yinu4sp6xqt5",
+  "name": "DELETE Request",
+  "method": "DELETE",
+  "url": "{{base_url}}/delete",
+  "headers": [
+    {
+      "key": "X-API-Key",
+      "value": "test-api-key-{{$randomInt}}",
+      "enabled": true
+    }
+  ]
+}

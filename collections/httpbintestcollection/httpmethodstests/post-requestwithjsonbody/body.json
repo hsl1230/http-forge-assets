@@ -1,0 +1,10 @@
+{
+  "userId": {{user_id}},
+  "title": "Test Post {{$timestamp}}",
+  "body": "This is a test post with dynamic values",
+  "metadata": {
+    "source": "HTTP Forge Test",
+    "environment": "{{environment_name}}",
+    "counter": {{global_counter}}
+  }
+}

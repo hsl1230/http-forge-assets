@@ -1,0 +1,980 @@
+{
+  "info": {
+    "_postman_id": "c1b2a3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+    "name": "Http Bin Test Collection",
+    "description": "Comprehensive test collection for HTTP Forge VSCode Extension. Tests collection folders, requests, scripts, and environment variables.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Authentication Tests",
+      "description": "Tests for various authentication methods",
+      "item": [
+        {
+          "name": "Basic Auth - Test Valid Credentials",
+          "request": {
+            "method": "GET",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{username}}",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "{{password}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/basic-auth/{{username}}/{{password}}",
+              "host": ["{{base_url}}"],
+              "path": ["basic-auth", "{{username}}", "{{password}}"]
+            }
+          },
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "// Pre-request script for Basic Auth",
+                  "console.log('Starting Basic Auth request...');",
+                  "console.log('Username:', pm.environment.get('username'));",
+                  "",
+                  "// Generate timestamp for request tracking",
+                  "const timestamp = new Date().toISOString();",
+                  "pm.environment.set('request_timestamp', timestamp);",
+                  "console.log('Request timestamp:', timestamp);",
+                  "",
+                  "// Validate environment variables",
+                  "if (!pm.environment.get('username') || !pm.environment.get('password')) {",
+                  "    throw new Error('Username or password environment variables not set');",
+                  "}"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "// Test script for Basic Auth",
+                  "pm.test('Status code is 200', function() {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response has valid JSON', function() {",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test('Authentication was successful', function() {",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.authenticated).to.be.true;",
+                  "    pm.expect(jsonData.user).to.equal(pm.environment.get('username'));",
+                  "});",
+                  "",
+                  "// Store response data in environment variable",
+                  "const responseTime = pm.response.responseTime;",
+                  "pm.environment.set('last_response_time', responseTime);",
+                  "console.log('Response time:', responseTime, 'ms');"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Bearer Token Authentication",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth_token}}",
+                "type": "text"
+              },
+              {
+                "key": "X-Custom-Header",
+                "value": "Test-Value-{{$timestamp}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/bearer",
+              "host": ["{{base_url}}"],
+              "path": ["bearer"]
+            }
+          },
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "// Pre-request for Bearer Token",
+                  "console.log('Bearer Token:', pm.environment.get('auth_token').substring(0, 20) + '...');",
+                  "",
+                  "// Generate dynamic value",
+                  "const dynamicValue = 'dyn_' + Date.now();",
+                  "pm.environment.set('dynamic_value', dynamicValue);",
+                  "",
+                  "// Increment global counter",
+                  "let counter = parseInt(pm.environment.get('global_counter') || 0);",
+                  "counter++;",
+                  "pm.environment.set('global_counter', counter.toString());",
+                  "console.log('Request counter:', counter);"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "// Test for Bearer Token",
+                  "pm.test('Bearer token was accepted', function() {",
+                  "    pm.response.to.have.status(200);",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.authenticated).to.be.true;",
+                  "});",
+                  "",
+                  "pm.test('Token is in response', function() {",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.token).to.equal(pm.environment.get('auth_token'));",
+                  "});",
+                  "",
+                  "// Test response headers",
+                  "pm.test('Response has content-type header', function() {",
+                  "    pm.response.to.have.header('Content-Type');",
+                  "});"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HTTP Methods Tests",
+      "description": "Tests for different HTTP methods",
+      "item": [
+        {
+          "name": "GET Request with Query Parameters",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/get?page=1&limit=10&sort=desc&filter={{dynamic_value}}",
+              "host": ["{{base_url}}"],
+              "path": ["get"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                },
+                {
+                  "key": "sort",
+                  "value": "desc"
+                },
+                {
+                  "key": "filter",
+                  "value": "{{dynamic_value}}"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "// Test GET request",
+                  "pm.test('GET request successful', function() {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Query parameters are returned', function() {",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.args.page).to.equal('1');",
+                  "    pm.expect(jsonData.args.limit).to.equal('10');",
+                  "    pm.expect(jsonData.args.filter).to.equal(pm.environment.get('dynamic_value'));",
+                  "});",
+                  "",
+                  "// Store URL for reference",
+                  "pm.environment.set('last_request_url', pm.request.url.toString());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "POST Request with JSON Body",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "{{content_type}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userId\": {{user_id}},\n  \"title\": \"Test Post {{$timestamp}}\",\n  \"body\": \"This is a test post with dynamic values\",\n  \"metadata\": {\n    \"source\": \"HTTP Forge Test\",\n    \"environment\": \"{{$environment}}\",\n    \"counter\": {{global_counter}}\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/post",
+              "host": ["{{base_url}}"],
+              "path": ["post"]
+            }
+          },
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "// Generate unique data for POST",
+                  "const postId = Math.floor(Math.random() * 10000);",
+                  "pm.environment.set('generated_post_id', postId);",
+                  "console.log('Generated Post ID:', postId);"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "// Test POST request",
+                  "pm.test('POST request successful', function() {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response contains sent JSON', function() {",
+                  "    const responseJson = pm.response.json();",
+                  "    const requestJson = JSON.parse(pm.request.body.raw);",
+                  "    ",
+                  "    pm.expect(responseJson.json.userId).to.equal(requestJson.userId);",
+                  "    pm.expect(responseJson.json.title).to.equal(requestJson.title);",
+                  "    pm.expect(responseJson.json.body).to.equal(requestJson.body);",
+                  "});",
+                  "",
+                  "// Extract and store data from response",
+                  "const responseData = pm.response.json();",
+                  "pm.environment.set('last_post_url', responseData.url);",
+                  "pm.environment.set('last_post_headers', JSON.stringify(responseData.headers));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "PUT Request with Path Parameter",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "{{content_type}}",
+                "type": "text"
+              },
+              {
+                "key": "X-Request-ID",
+                "value": "{{$guid}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 123,\n  \"updated\": true,\n  \"timestamp\": \"{{$timestamp}}\",\n  \"updatedBy\": \"{{username}}\",\n  \"changes\": [\n    {\n      \"field\": \"status\",\n      \"oldValue\": \"pending\",\n      \"newValue\": \"completed\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/put/{{user_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["put", "{{user_id}}"]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "// Test PUT request",
+                  "pm.test('PUT request successful', function() {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Path parameter is in URL', function() {",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.url).to.include('/put/' + pm.environment.get('user_id'));",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "DELETE Request",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "test-api-key-{{$randomInt}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/delete/{{user_id}}/resource/{{generated_post_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["delete", "{{user_id}}", "resource", "{{generated_post_id}}"]
+            }
+          }
+        },
+        {
+          "name": "PATCH Request",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json-patch+json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  { \"op\": \"replace\", \"path\": \"/status\", \"value\": \"updated\" },\n  { \"op\": \"add\", \"path\": \"/tags\", \"value\": [\"test\", \"patch\"] },\n  { \"op\": \"remove\", \"path\": \"/oldField\" }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/patch",
+              "host": ["{{base_url}}"],
+              "path": ["patch"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Advanced Features Tests",
+      "description": "Tests for advanced HTTP features and edge cases",
+      "item": [
+        {
+          "name": "Request with Custom Headers",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Custom-Header-1",
+                "value": "Value1-{{$timestamp}}",
+                "type": "text"
+              },
+              {
+                "key": "X-Custom-Header-2",
+                "value": "Value2",
+                "type": "text"
+              },
+              {
+                "key": "X-Request-Time",
+                "value": "{{$datetime iso8601}}",
+                "type": "text"
+              },
+              {
+                "key": "X-Environment",
+                "value": "{{$environment}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/headers",
+              "host": ["{{base_url}}"],
+              "path": ["headers"]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "// Test custom headers",
+                  "pm.test('Headers are returned', function() {",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.headers['X-Custom-Header-1']).to.exist;",
+                  "    pm.expect(jsonData.headers['X-Custom-Header-2']).to.equal('Value2');",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Request with Form Data",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "username",
+                  "value": "{{username}}",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "{{password}}",
+                  "type": "text"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "password",
+                  "type": "text"
+                },
+                {
+                  "key": "scope",
+                  "value": "read write",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/post",
+              "host": ["{{base_url}}"],
+              "path": ["post"]
+            }
+          }
+        },
+        {
+          "name": "Delay Response Test",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/delay/3",
+              "host": ["{{base_url}}"],
+              "path": ["delay", "3"]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "// Test delayed response",
+                  "pm.test('Delayed response received', function() {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response time is reasonable', function() {",
+                  "    pm.expect(pm.response.responseTime).to.be.above(2900);",
+                  "    pm.expect(pm.response.responseTime).to.be.below(3500);",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Status Code Test - 404",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/status/404",
+              "host": ["{{base_url}}"],
+              "path": ["status", "404"]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "// Test 404 status code",
+                  "pm.test('Status code is 404', function() {",
+                  "    pm.response.to.have.status(404);",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Redirect Test",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/redirect/2",
+              "host": ["{{base_url}}"],
+              "path": ["redirect", "2"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Dynamic Script Tests",
+      "description": "Requests with complex scripts and dynamic behavior",
+      "item": [
+        {
+          "name": "Dynamic Request with Script",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "{{content_type}}",
+                "type": "text"
+              },
+              {
+                "key": "X-Session-ID",
+                "value": "{{$guid}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"operation\": \"calculate\",\n  \"values\": [1, 2, 3, 4, 5],\n  \"requestId\": \"{{$guid}}\",\n  \"timestamp\": \"{{$timestamp}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/post",
+              "host": ["{{base_url}}"],
+              "path": ["post"]
+            }
+          },
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "// Complex pre-request script",
+                  "console.log('=== Starting Dynamic Request ===');",
+                  "",
+                  "// Calculate values dynamically",
+                  "const numbers = [10, 20, 30, 40, 50];",
+                  "const sum = numbers.reduce((a, b) => a + b, 0);",
+                  "const average = sum / numbers.length;",
+                  "",
+                  "// Store calculations in variables",
+                  "pm.environment.set('calculated_sum', sum);",
+                  "pm.environment.set('calculated_average', average);",
+                  "",
+                  "// Generate request body dynamically",
+                  "const requestBody = {",
+                  "    operation: 'calculate',",
+                  "    values: numbers,",
+                  "    metadata: {",
+                  "        sum: sum,",
+                  "        average: average,",
+                  "        count: numbers.length,",
+                  "        generatedAt: new Date().toISOString()",
+                  "    },",
+                  "    requestId: pm.variables.replaceIn('{{$guid}}'),",
+                  "    environment: pm.environment.name",
+                  "};",
+                  "",
+                  "// Update request body",
+                  "pm.request.body.raw = JSON.stringify(requestBody, null, 2);",
+                  "",
+                  "// Add custom header",
+                  "pm.request.headers.add({",
+                  "    key: 'X-Calculation-Sum',",
+                  "    value: sum.toString()",
+                  "});",
+                  "",
+                  "console.log('Request body set dynamically');",
+                  "console.log('Sum:', sum, 'Average:', average);"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "// Complex test script",
+                  "pm.test('Response is valid', function() {",
+                  "    pm.response.to.have.status(200);",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test('Response contains our data', function() {",
+                  "    const responseJson = pm.response.json();",
+                  "    const requestBody = JSON.parse(pm.request.body.raw);",
+                  "    ",
+                  "    pm.expect(responseJson.json.operation).to.equal('calculate');",
+                  "    pm.expect(responseJson.json.values).to.eql(requestBody.values);",
+                  "});",
+                  "",
+                  "pm.test('Performance test', function() {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.environment.get('request_timeout')));",
+                  "});",
+                  "",
+                  "// Extract and log response data",
+                  "const responseData = pm.response.json();",
+                  "console.log('Response received:', {",
+                  "    url: responseData.url,",
+                  "    headers: Object.keys(responseData.headers).length,",
+                  "    origin: responseData.origin",
+                  "});",
+                  "",
+                  "// Chain requests - set up for next request",
+                  "pm.environment.set('last_response_data', JSON.stringify(responseData.json));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Collection Level Scripts",
+      "description": "Folder to test collection-level scripts execution order",
+      "item": [
+        {
+          "name": "Test Collection Script - Simple GET",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Test-Collection",
+                "value": "true",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/get?test=collection_script",
+              "host": ["{{base_url}}"],
+              "path": ["get"],
+              "query": [
+                {
+                  "key": "test",
+                  "value": "collection_script"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "// Request-level pre-request script",
+                  "console.log('=== Request Pre-request Script ===');",
+                  "console.log('Request name:', pm.info.requestName);",
+                  "",
+                  "// Set request-specific variable",
+                  "pm.variables.set('request_start_time', Date.now());",
+                  "console.log('Request start time set');"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "// Request-level test script",
+                  "console.log('=== Request Test Script ===');",
+                  "",
+                  "pm.test('Collection script test passed', function() {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "// Calculate request duration",
+                  "const startTime = pm.variables.get('request_start_time');",
+                  "const duration = Date.now() - startTime;",
+                  "console.log('Request duration:', duration, 'ms');",
+                  "",
+                  "// Store in collection variable",
+                  "pm.collectionVariables.set('last_request_duration', duration.toString());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Test Collection Script - POST with Dynamic Data",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "X-Collection-Test",
+                "value": "folder_level_script_test",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"test\": \"collection_scripts\",\n  \"collectionSession\": \"{{session_id}}\",\n  \"totalRequestsSoFar\": {{total_requests}},\n  \"timestamp\": \"{{$timestamp}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/post",
+              "host": ["{{base_url}}"],
+              "path": ["post"]
+            }
+          },
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "// Another request-level script",
+                  "console.log('=== Second Request Pre-request ===');",
+                  "",
+                  "// Access collection variable set by collection-level script",
+                  "const totalRequests = pm.collectionVariables.get('total_requests');",
+                  "console.log('Total requests from collection variable:', totalRequests);",
+                  "",
+                  "// Modify request body based on collection data",
+                  "const body = JSON.parse(pm.request.body.raw);",
+                  "body.collectionData = {",
+                  "    session: pm.collectionVariables.get('session_id'),",
+                  "    lastStatus: pm.collectionVariables.get('last_response_status'),",
+                  "    historyCount: JSON.parse(pm.collectionVariables.get('request_history') || '[]').length",
+                  "};",
+                  "pm.request.body.raw = JSON.stringify(body, null, 2);"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "// Verify collection-level script execution",
+                  "pm.test('Response contains collection data', function() {",
+                  "    const responseJson = pm.response.json();",
+                  "    pm.expect(responseJson.json.test).to.equal('collection_scripts');",
+                  "    pm.expect(responseJson.json.collectionSession).to.equal(pm.collectionVariables.get('session_id'));",
+                  "});",
+                  "",
+                  "// Test that collection-level variables are accessible",
+                  "pm.test('Collection variables exist', function() {",
+                  "    pm.expect(pm.collectionVariables.get('session_id')).to.not.be.empty;",
+                  "    pm.expect(pm.collectionVariables.get('total_requests')).to.not.be.empty;",
+                  "});",
+                  "",
+                  "// Log script execution chain",
+                  "console.log('=== Script Execution Complete ===');",
+                  "console.log('Collection variables:');",
+                  "console.log('- session_id:', pm.collectionVariables.get('session_id'));",
+                  "console.log('- total_requests:', pm.collectionVariables.get('total_requests'));",
+                  "console.log('- request_history count:', JSON.parse(pm.collectionVariables.get('request_history') || '[]').length);"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "// Folder-level pre-request script",
+              "console.log('=== Folder Pre-request Script ===');",
+              "console.log('Folder:', pm.info.requestName || 'Folder-level execution');",
+              "",
+              "// Initialize folder-level variables",
+              "if (!pm.variables.get('folder_execution_count')) {",
+              "    pm.variables.set('folder_execution_count', 0);",
+              "}",
+              "",
+              "// Increment folder execution counter",
+              "let folderCount = parseInt(pm.variables.get('folder_execution_count'));",
+              "folderCount++;",
+              "pm.variables.set('folder_execution_count', folderCount);",
+              "console.log('Folder execution count:', folderCount);",
+              "",
+              "// Add folder-specific header",
+              "pm.request.headers.add({",
+              "    key: 'X-Folder-Level',",
+              "    value: 'true'",
+              "});"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "// Folder-level test script",
+              "console.log('=== Folder Test Script ===');",
+              "console.log('Request completed in folder:', pm.info.requestName);",
+              "",
+              "// Folder-level assertions",
+              "pm.test('Folder-level: Response is valid', function() {",
+              "    pm.expect(pm.response.code).to.be.oneOf([200, 201, 204]);",
+              "});",
+              "",
+              "// Update folder execution stats",
+              "let folderStats = pm.collectionVariables.get('folder_stats') || '{}';",
+              "folderStats = JSON.parse(folderStats);",
+              "folderStats[pm.info.requestName] = {",
+              "    timestamp: new Date().toISOString(),",
+              "    status: pm.response.code,",
+              "    time: pm.response.responseTime",
+              "};",
+              "pm.collectionVariables.set('folder_stats', JSON.stringify(folderStats));"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "// Global pre-request script for entire collection",
+          "console.log('🚀 Starting HTTP Forge Test Collection');",
+          "console.log('====================================');",
+          "console.log('Collection: ' + pm.info.collectionName);",
+          "console.log('Timestamp: ' + new Date().toISOString());",
+          "console.log('Environment: ' + pm.environment.name);",
+          "",
+          "// Initialize session variables",
+          "const sessionId = 'sess_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);",
+          "pm.collectionVariables.set('session_id', sessionId);",
+          "console.log('Session ID: ' + sessionId);",
+          "",
+          "// Validate required environment variables",
+          "const requiredVars = ['base_url', 'username'];",
+          "requiredVars.forEach(function(varName) {",
+          "    if (!pm.environment.get(varName)) {",
+          "        console.error('Missing required environment variable: ' + varName);",
+          "    }",
+          "});",
+          "",
+          "// Add global header to all requests",
+          "pm.request.headers.add({",
+          "    key: 'X-Collection-Global',",
+          "    value: 'HTTP_Forge_Test'",
+          "});"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "// Global test script for entire collection",
+          "console.log('✅ Request completed: ' + pm.info.requestName);",
+          "console.log('Status: ' + pm.response.code + ' ' + pm.response.status);",
+          "console.log('Time: ' + pm.response.responseTime + 'ms');",
+          "",
+          "// Basic response validation",
+          "pm.test('Global test: Response time is less than 10 seconds', function () {",
+          "    pm.expect(pm.response.responseTime).to.be.below(10000);",
+          "});",
+          "",
+          "// Log to collection variable",
+          "let requestHistory = pm.collectionVariables.get('request_history') || '[]';",
+          "requestHistory = JSON.parse(requestHistory);",
+          "requestHistory.push({",
+          "    name: pm.info.requestName,",
+          "    timestamp: new Date().toISOString(),",
+          "    status: pm.response.code,",
+          "    time: pm.response.responseTime",
+          "});",
+          "pm.collectionVariables.set('request_history', JSON.stringify(requestHistory));",
+          "",
+          "// Log collection statistics",
+          "console.log('📊 Collection Statistics:');",
+          "console.log('- Total requests in session: ' + requestHistory.length);",
+          "console.log('- Session ID: ' + pm.collectionVariables.get('session_id'));"
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "session_id",
+      "value": ""
+    },
+    {
+      "key": "total_requests",
+      "value": "0"
+    },
+    {
+      "key": "last_response_status",
+      "value": ""
+    },
+    {
+      "key": "last_response_time",
+      "value": ""
+    },
+    {
+      "key": "request_history",
+      "value": "[]"
+    },
+    {
+      "key": "last_request_duration",
+      "value": ""
+    },
+    {
+      "key": "folder_stats",
+      "value": "{}"
+    }
+  ],
+  "auth": null
+}

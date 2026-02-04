@@ -1,0 +1,26 @@
+{
+  "name": "test",
+  "description": "Imported from Postman export",
+  "variables": {
+    "base_url": "https://httpbin.org",
+    "api_version": "v1",
+    "auth_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+    "username": "test_user",
+    "password": "test_pass_123",
+    "user_id": "1001",
+    "content_type": "application/json",
+    "environment_name": "test",
+    "request_timeout": "5000",
+    "dynamic_value": "",
+    "global_counter": "0",
+    "request_timestamp": "",
+    "last_response_time": "",
+    "last_request_url": "",
+    "generated_post_id": "",
+    "last_post_url": "",
+    "last_post_headers": "",
+    "calculated_sum": "",
+    "calculated_average": "",
+    "last_response_data": ""
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "id": 123,
+  "updated": true,
+  "timestamp": "{{$timestamp}}",
+  "updatedBy": "{{username}}",
+  "changes": [
+    {
+      "field": "status",
+      "oldValue": "pending",
+      "newValue": "completed"
+    }
+  ]
+}

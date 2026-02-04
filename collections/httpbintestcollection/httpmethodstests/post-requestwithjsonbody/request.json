@@ -1,0 +1,16 @@
+{
+  "id": "post_request_with_json_body_ml2x1yine5jazhwtw",
+  "name": "POST Request with JSON Body",
+  "method": "POST",
+  "url": "{{base_url}}/post",
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "{{content_type}}",
+      "enabled": true
+    }
+  ],
+  "body": {
+    "type": "raw"
+  }
+}

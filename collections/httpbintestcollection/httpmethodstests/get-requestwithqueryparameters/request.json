@@ -1,0 +1,29 @@
+{
+  "id": "get_request_with_query_parameters_ml2x1yinu20bdov4h",
+  "name": "GET Request with Query Parameters",
+  "method": "GET",
+  "url": "{{base_url}}/get?page=1&limit=10&sort=desc&filter={{dynamic_value}}",
+  "query": [
+    {
+      "key": "page",
+      "value": "1",
+      "enabled": true
+    },
+    {
+      "key": "limit",
+      "value": "10",
+      "enabled": true
+    },
+    {
+      "key": "sort",
+      "value": "desc",
+      "enabled": true
+    },
+    {
+      "key": "filter",
+      "value": "{{dynamic_value}}",
+      "enabled": true
+    }
+  ],
+  "headers": []
+}
