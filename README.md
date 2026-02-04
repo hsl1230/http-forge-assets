@@ -1,6 +1,6 @@
 # HTTP Forge Assets
 
-Sample collections, environments, and test suites for [HTTP Forge](https://marketplace.visualstudio.com/items?itemName=hsl1230.http-forge) - a powerful API testing extension for Visual Studio Code.
+Sample collections, environments, and test suites for [HTTP Forge](https://marketplace.visualstudio.com/items?itemName=henry-huang.http-forge) - a powerful API testing extension for Visual Studio Code.
 
 ## 📁 Repository Structure
 
@@ -22,7 +22,7 @@ http-forge-assets/
 
 ## 🚀 Getting Started
 
-1. Install [HTTP Forge](https://marketplace.visualstudio.com/items?itemName=hsl1230.http-forge) in VS Code
+1. Install [HTTP Forge](https://marketplace.visualstudio.com/items?itemName=henry-huang.http-forge) in VS Code
 2. Clone this repository:
    ```bash
    git clone https://github.com/hsl1230/http-forge-assets.git
@@ -55,7 +55,7 @@ http-forge-assets/
 
 ## 🔗 Related Links
 
-- [HTTP Forge Extension](https://marketplace.visualstudio.com/items?itemName=hsl1230.http-forge)
+- [HTTP Forge Extension](https://marketplace.visualstudio.com/items?itemName=henry-huang.http-forge)
 - [HTTP Forge Documentation](./docs/user-guide/index.md)
 - [Report Issues](https://github.com/hsl1230/http-forge/issues)
 
