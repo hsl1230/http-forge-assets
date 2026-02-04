@@ -56,7 +56,7 @@ http-forge-assets/
 ## 🔗 Related Links
 
 - [HTTP Forge Extension](https://marketplace.visualstudio.com/items?itemName=hsl1230.http-forge)
-- [HTTP Forge Documentation](https://github.com/hsl1230/http-forge/wiki)
+- [HTTP Forge Documentation](./docs/user-guide/index.md)
 - [Report Issues](https://github.com/hsl1230/http-forge/issues)
 
 ## 📄 License
