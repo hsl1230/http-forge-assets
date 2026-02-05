@@ -1,0 +1,28 @@
+{
+  "id": "request_with_custom_headers_mla2knzfqg25z9u73",
+  "name": "Request with Custom Headers",
+  "method": "GET",
+  "url": "{{base_url}}/headers",
+  "headers": [
+    {
+      "key": "X-Custom-Header-1",
+      "value": "Value1-{{$timestamp}}",
+      "enabled": true
+    },
+    {
+      "key": "X-Custom-Header-2",
+      "value": "Value2",
+      "enabled": true
+    },
+    {
+      "key": "X-Request-Time",
+      "value": "{{$datetime iso8601}}",
+      "enabled": true
+    },
+    {
+      "key": "X-Environment",
+      "value": "{{$environment}}",
+      "enabled": true
+    }
+  ]
+}

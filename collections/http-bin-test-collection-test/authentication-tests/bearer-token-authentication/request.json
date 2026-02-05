@@ -1,0 +1,22 @@
+{
+  "id": "bearer_token_authentication_mla2knzf4czjr434r",
+  "name": "Bearer Token Authentication",
+  "method": "GET",
+  "url": "{{base_url}}/bearer",
+  "headers": [
+    {
+      "key": "Authorization",
+      "value": "Bearer {{auth_token}}",
+      "enabled": true
+    },
+    {
+      "key": "X-Custom-Header",
+      "value": "Test-Value-{{$timestamp}}",
+      "enabled": true
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearerToken": "{{auth_token}}"
+  }
+}

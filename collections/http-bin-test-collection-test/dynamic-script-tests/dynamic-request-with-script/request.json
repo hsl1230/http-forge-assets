@@ -1,0 +1,22 @@
+{
+  "id": "dynamic_request_with_script_mla2knzgi0lf41mpb",
+  "name": "Dynamic Request with Script",
+  "method": "POST",
+  "url": "{{base_url}}/post",
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "{{content_type}}",
+      "enabled": true
+    },
+    {
+      "key": "X-Session-ID",
+      "value": "{{$guid}}",
+      "enabled": true
+    }
+  ],
+  "body": {
+    "type": "raw",
+    "format": "json"
+  }
+}

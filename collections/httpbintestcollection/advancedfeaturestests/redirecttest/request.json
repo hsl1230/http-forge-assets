@@ -1,7 +1,0 @@
-{
-  "id": "redirect_test_ml2x1yinytliqlt35",
-  "name": "Redirect Test",
-  "method": "GET",
-  "url": "{{base_url}}/redirect/2",
-  "headers": []
-}

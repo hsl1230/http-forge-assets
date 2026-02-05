@@ -1,0 +1,20 @@
+{
+  "id": "test_collection_script_-_simple_get_mla2knzffufju1bus",
+  "name": "Test Collection Script - Simple GET",
+  "method": "GET",
+  "url": "{{base_url}}/get?test=collection_script",
+  "query": [
+    {
+      "key": "test",
+      "value": "collection_script",
+      "enabled": true
+    }
+  ],
+  "headers": [
+    {
+      "key": "X-Test-Collection",
+      "value": "true",
+      "enabled": true
+    }
+  ]
+}

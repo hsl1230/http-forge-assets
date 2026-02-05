@@ -1,0 +1,7 @@
+{
+  "id": "status_code_test_-_404_mla2knzf7bmuge1d5",
+  "name": "Status Code Test - 404",
+  "method": "GET",
+  "url": "{{base_url}}/status/404",
+  "headers": []
+}

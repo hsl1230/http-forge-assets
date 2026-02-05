@@ -1,7 +1,0 @@
-{
-  "id": "delay_response_test_ml2x1yino49ql53f5",
-  "name": "Delay Response Test",
-  "method": "GET",
-  "url": "{{base_url}}/delay/3",
-  "headers": []
-}

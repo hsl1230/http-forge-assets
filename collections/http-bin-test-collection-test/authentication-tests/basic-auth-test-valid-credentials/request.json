@@ -1,0 +1,14 @@
+{
+  "id": "basic_auth_-_test_valid_credentials_mla2knzftsfknyx66",
+  "name": "Basic Auth - Test Valid Credentials",
+  "method": "GET",
+  "url": "{{base_url}}/basic-auth/{{username}}/{{password}}",
+  "headers": [],
+  "auth": {
+    "type": "basic",
+    "basicAuth": {
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  }
+}

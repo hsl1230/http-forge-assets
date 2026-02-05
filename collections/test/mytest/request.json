@@ -1,0 +1,23 @@
+{
+  "id": "mytest_mla2infz124xf8aje",
+  "name": "mytest",
+  "method": "DELETE",
+  "url": "{{base_url}}/delete",
+  "params": {},
+  "query": [],
+  "headers": [],
+  "body": {
+    "type": "none",
+    "content": null
+  },
+  "settings": {
+    "timeout": 30000,
+    "followRedirects": true,
+    "followOriginalMethod": false,
+    "followAuthHeader": false,
+    "maxRedirects": 10,
+    "strictSSL": true,
+    "decompress": true,
+    "includeCookies": true
+  }
+}
