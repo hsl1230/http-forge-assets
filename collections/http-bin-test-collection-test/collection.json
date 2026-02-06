@@ -1,4 +1,9 @@
 {
   "id": "http_bin_test_collection_-_test_mla2knzfrm6x0no5f",
-  "name": "Http Bin Test Collection"
+  "name": "Http Bin Test Collection",
+  "description": "",
+  "variables": {},
+  "auth": {
+    "type": "none"
+  }
 }

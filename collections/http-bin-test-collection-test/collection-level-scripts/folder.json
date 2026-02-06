@@ -1,4 +1,8 @@
 {
   "id": "collection_level_scripts_mla2knzf60gnzmsa1",
-  "name": "Collection Level Scripts"
+  "name": "Collection Level Scripts",
+  "description": "",
+  "auth": {
+    "type": "none"
+  }
 }

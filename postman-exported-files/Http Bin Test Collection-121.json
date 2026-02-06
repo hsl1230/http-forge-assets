@@ -153,7 +153,8 @@
             }
           ]
         }
-      ]
+      ],
+      "event": []
     },
     {
       "name": "Authentication Tests",
@@ -268,7 +269,8 @@
             }
           ]
         }
-      ]
+      ],
+      "event": []
     },
     {
       "name": "Collection Level Scripts",
@@ -377,6 +379,26 @@
             }
           ]
         }
+      ],
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "// Folder-level pre-request script\nconsole.log('=== Folder Pre-request Script ===');\nconsole.log('Folder:', pm.info.requestName || 'Folder-level execution');\n\n// Initialize folder-level variables\nif (!pm.variables.get('folder_execution_count')) {\n    pm.variables.set('folder_execution_count', 0);\n}\n\n// Increment folder execution counter,\nlet folderCount = parseInt(pm.variables.get('folder_execution_count'));\nfolderCount++;\npm.variables.set('folder_execution_count', folderCount);\nconsole.log('Folder execution count:', folderCount);\n\n// Add folder-specific header,\npm.request.headers.add({\n    key: 'X-Folder-Level',\n    value: 'true'\n});\n"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "// Folder-level test script\nconsole.log('=== Folder Test Script ===');\nconsole.log('Request completed in folder:', pm.info.requestName);\n\n// Folder-level assertions\npm.test('Folder-level: Response is valid', function () {\n    pm.expect(pm.response.code).to.be.oneOf([200, 201, 204]);\n});\n\n// Update folder execution stats\nlet folderStats = pm.collectionVariables.get('folder_stats') || '{}';\nfolderStats = JSON.parse(folderStats);\nfolderStats[pm.info.requestName] = {\n    timestamp: new Date().toISOString(),\n    status: pm.response.code,\n    time: pm.response.responseTime\n};\npm.collectionVariables.set('folder_stats', JSON.stringify(folderStats));\n"
+            ]
+          }
+        }
       ]
     },
     {
@@ -438,7 +460,8 @@
             }
           ]
         }
-      ]
+      ],
+      "event": []
     },
     {
       "name": "HTTP Methods Tests",
@@ -650,7 +673,28 @@
             }
           ]
         }
-      ]
+      ],
+      "event": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "// Global pre-request script for entire collection,\nconsole.log('🚀 Starting HTTP Forge Test Collection');\nconsole.log('====================================');\nconsole.log('Collection: ' + pm.info.collectionName);\nconsole.log('Timestamp: ' + new Date().toISOString());\nconsole.log('Environment: ' + pm.environment.name);\n\n// Initialize session variables,\nconst sessionId = 'sess_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);\npm.collectionVariables.set('session_id', sessionId);\nconsole.log('Session ID: ' + sessionId);\n\n// Validate required environment variables,\nconst requiredVars = ['base_url', 'username'];\nrequiredVars.forEach(function (varName) {\n    if (!pm.environment.get(varName)) {\n        console.error('Missing required environment variable: ' + varName);\n    }\n});\n\n// Add global header to all requests,\npm.request.headers.add({\n    key: 'X-Collection-Global',\n    value: 'HTTP_Forge_Test'\n});\n"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "// Global test script for entire collection,\nconsole.log('✅ Request completed: ' + pm.info.requestName)\nconsole.log('Status: ' + pm.response.code + ' ' + pm.response.status)\nconsole.log('Time: ' + pm.response.responseTime + 'ms')\n\n// Basic response validation,\npm.test('Global test: Response time is less than 10 seconds', function () {\n    pm.expect(pm.response.responseTime).to.be.below(10000)\n})\n\n// Log to collection variable,\nlet requestHistory = pm.collectionVariables.get('request_history') || '[]'\nrequestHistory = JSON.parse(requestHistory)\nrequestHistory.push({\n    name: pm.info.requestName,\n    timestamp: new Date().toISOString(),\n    status: pm.response.code,\n    time: pm.response.responseTime,\n})\npm.collectionVariables.set('request_history', JSON.stringify(requestHistory))\n\n// Log collection statistics,\nconsole.log('📊 Collection Statistics:')\nconsole.log('- Total requests in session: ' + requestHistory.length)\nconsole.log('- Session ID: ' + pm.collectionVariables.get('session_id'));\n"
+        ]
+      }
     }
   ],
   "variable": []
