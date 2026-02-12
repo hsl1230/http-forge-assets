@@ -3,138 +3,12 @@
   "name": "Http Bin Test Collection",
   "requests": [
     {
-      "collectionId": "http_bin_test_collection_ml2x1yinnovt5k8wq",
-      "requestId": "delay_response_test_ml2x1yino49ql53f5",
+      "collectionId": "http_bin_test_collection_-_test_mla2knzfrm6x0no5f",
+      "requestId": "delay_response_test_mla2knzfkwhbp45wc",
       "name": "Delay Response Test",
       "method": "GET",
       "collectionName": "Http Bin Test Collection",
       "folderPath": "Advanced Features Tests",
-      "enabled": true
-    },
-    {
-      "collectionId": "http_bin_test_collection_ml2x1yinnovt5k8wq",
-      "requestId": "redirect_test_ml2x1yinytliqlt35",
-      "name": "Redirect Test",
-      "method": "GET",
-      "collectionName": "Http Bin Test Collection",
-      "folderPath": "Advanced Features Tests",
-      "enabled": true
-    },
-    {
-      "collectionId": "http_bin_test_collection_ml2x1yinnovt5k8wq",
-      "requestId": "request_with_custom_headers_ml2x1yin840vg92b3",
-      "name": "Request with Custom Headers",
-      "method": "GET",
-      "collectionName": "Http Bin Test Collection",
-      "folderPath": "Advanced Features Tests",
-      "enabled": true
-    },
-    {
-      "collectionId": "http_bin_test_collection_ml2x1yinnovt5k8wq",
-      "requestId": "request_with_form_data_ml2x1yinm2lnymmfw",
-      "name": "Request with Form Data",
-      "method": "POST",
-      "collectionName": "Http Bin Test Collection",
-      "folderPath": "Advanced Features Tests",
-      "enabled": true
-    },
-    {
-      "collectionId": "http_bin_test_collection_ml2x1yinnovt5k8wq",
-      "requestId": "status_code_test_-_404_ml2x1yinrppjkidpp",
-      "name": "Status Code Test - 404",
-      "method": "GET",
-      "collectionName": "Http Bin Test Collection",
-      "folderPath": "Advanced Features Tests",
-      "enabled": true
-    },
-    {
-      "collectionId": "http_bin_test_collection_ml2x1yinnovt5k8wq",
-      "requestId": "basic_auth_-_test_valid_credentials_ml2x1yin7wjd1ebc2",
-      "name": "Basic Auth - Test Valid Credentials",
-      "method": "GET",
-      "collectionName": "Http Bin Test Collection",
-      "folderPath": "Authentication Tests",
-      "enabled": true
-    },
-    {
-      "collectionId": "http_bin_test_collection_ml2x1yinnovt5k8wq",
-      "requestId": "bearer_token_authentication_ml2x1yinfq9w7mw4y",
-      "name": "Bearer Token Authentication",
-      "method": "GET",
-      "collectionName": "Http Bin Test Collection",
-      "folderPath": "Authentication Tests",
-      "enabled": true
-    },
-    {
-      "collectionId": "http_bin_test_collection_ml2x1yinnovt5k8wq",
-      "requestId": "test_collection_script_-_post_with_dynamic_data_ml2x1yinrw314bk10",
-      "name": "Test Collection Script - POST with Dynamic Data",
-      "method": "POST",
-      "collectionName": "Http Bin Test Collection",
-      "folderPath": "Collection Level Scripts",
-      "enabled": true
-    },
-    {
-      "collectionId": "http_bin_test_collection_ml2x1yinnovt5k8wq",
-      "requestId": "test_collection_script_-_simple_get_ml2x1yinuxg1ymb04",
-      "name": "Test Collection Script - Simple GET",
-      "method": "GET",
-      "collectionName": "Http Bin Test Collection",
-      "folderPath": "Collection Level Scripts",
-      "enabled": true
-    },
-    {
-      "collectionId": "http_bin_test_collection_ml2x1yinnovt5k8wq",
-      "requestId": "dynamic_request_with_script_ml2x1yinuohkiztwr",
-      "name": "Dynamic Request with Script",
-      "method": "POST",
-      "collectionName": "Http Bin Test Collection",
-      "folderPath": "Dynamic Script Tests",
-      "enabled": true
-    },
-    {
-      "collectionId": "http_bin_test_collection_ml2x1yinnovt5k8wq",
-      "requestId": "delete_request_ml2x1yinu4sp6xqt5",
-      "name": "DELETE Request",
-      "method": "DELETE",
-      "collectionName": "Http Bin Test Collection",
-      "folderPath": "HTTP Methods Tests",
-      "enabled": true
-    },
-    {
-      "collectionId": "http_bin_test_collection_ml2x1yinnovt5k8wq",
-      "requestId": "get_request_with_query_parameters_ml2x1yinu20bdov4h",
-      "name": "GET Request with Query Parameters",
-      "method": "GET",
-      "collectionName": "Http Bin Test Collection",
-      "folderPath": "HTTP Methods Tests",
-      "enabled": true
-    },
-    {
-      "collectionId": "http_bin_test_collection_ml2x1yinnovt5k8wq",
-      "requestId": "patch_request_ml2x1yin4yrg9pj24",
-      "name": "PATCH Request",
-      "method": "PATCH",
-      "collectionName": "Http Bin Test Collection",
-      "folderPath": "HTTP Methods Tests",
-      "enabled": true
-    },
-    {
-      "collectionId": "http_bin_test_collection_ml2x1yinnovt5k8wq",
-      "requestId": "post_request_with_json_body_ml2x1yine5jazhwtw",
-      "name": "POST Request with JSON Body",
-      "method": "POST",
-      "collectionName": "Http Bin Test Collection",
-      "folderPath": "HTTP Methods Tests",
-      "enabled": true
-    },
-    {
-      "collectionId": "http_bin_test_collection_ml2x1yinnovt5k8wq",
-      "requestId": "put_request_with_path_parameter_ml2x1yin4ypgxp958",
-      "name": "PUT Request with Path Parameter",
-      "method": "PUT",
-      "collectionName": "Http Bin Test Collection",
-      "folderPath": "HTTP Methods Tests",
       "enabled": true
     }
   ],
@@ -147,5 +21,5 @@
   },
   "isTemporary": false,
   "createdAt": 1770178604438,
-  "updatedAt": 1770178604438
+  "updatedAt": 1770742945539
 }
