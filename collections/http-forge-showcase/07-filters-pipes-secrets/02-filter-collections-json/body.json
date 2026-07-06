@@ -1,0 +1,5 @@
+{
+  "firstUser": "{{users_json | parseJSON | first | prop('name')}}",
+  "seniorUsers": "{{users_json | parseJSON | filter(age>=30) | map('name') | join(',')}}",
+  "uniqueTags": "{{csv_tags | split(',') | unique | join('|')}}"
+}

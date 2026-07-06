@@ -1,0 +1,23 @@
+{
+  "id": "dynamic_values_mqshowcase0301",
+  "name": "Dynamic Values ($guid, $timestamp, $randomInt)",
+  "method": "POST",
+  "url": "{{httpbin_url}}/anything",
+  "query": [],
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "{{content_type}}",
+      "enabled": true
+    },
+    {
+      "key": "X-Request-Id",
+      "value": "{{$guid}}",
+      "enabled": true
+    }
+  ],
+  "body": {
+    "type": "raw",
+    "format": "json"
+  }
+}

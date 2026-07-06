@@ -1,0 +1,12 @@
+{
+  "id": "http_methods_mqshowcase01",
+  "name": "01 - HTTP Methods",
+  "order": [
+    "create-post",
+    "delete-post",
+    "get-all-posts",
+    "get-post-by-id",
+    "patch-post",
+    "update-post"
+  ]
+}

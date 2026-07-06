@@ -1,0 +1,285 @@
+{
+  "id": "get_T7.3+_CONTENT_VIDEOURL_type_id_asset",
+  "name": "get_T7.3+_CONTENT/VIDEOURL/:type/:id/:asset",
+  "method": "GET",
+  "url": "{{baseUrl}}/TELUS/:appversion/:cluster/:locale/:channel/:propertyName/CONTENT/VIDEOURL/:contentType/:contentId/:assetId",
+  "headers": [
+    {
+      "key": "avsorighost",
+      "value": "",
+      "enabled": false,
+      "description": "Header: avsorighost"
+    },
+    {
+      "key": "clientip",
+      "value": "",
+      "enabled": false,
+      "description": "Header: clientip"
+    },
+    {
+      "key": "content-type",
+      "value": "",
+      "enabled": false,
+      "description": "Header: content-type"
+    },
+    {
+      "key": "pcpin",
+      "value": "",
+      "enabled": false,
+      "description": "Header: pcpin"
+    },
+    {
+      "key": "x-forwarded-for",
+      "value": "",
+      "enabled": false,
+      "description": "Header: x-forwarded-for"
+    }
+  ],
+  "query": [
+    {
+      "key": "action",
+      "value": "",
+      "enabled": false,
+      "description": "Query parameter: action"
+    },
+    {
+      "key": "castDeviceType",
+      "value": "",
+      "enabled": false,
+      "description": "Query parameter: castDeviceType"
+    },
+    {
+      "key": "channel",
+      "value": "",
+      "enabled": false,
+      "description": "Query parameter: channel"
+    },
+    {
+      "key": "deviceId",
+      "value": "63a7d9a9-cb4c-486c-bae0-7180d0ef68ca",
+      "enabled": true,
+      "description": "Query parameter: deviceId"
+    },
+    {
+      "key": "deviceType",
+      "value": "",
+      "enabled": false,
+      "description": "Query parameter: deviceType"
+    },
+    {
+      "key": "downloadHoursFromFirstPlay",
+      "value": "",
+      "enabled": false,
+      "description": "Query parameter: downloadHoursFromFirstPlay"
+    },
+    {
+      "key": "downloadMaxDays",
+      "value": "",
+      "enabled": false,
+      "description": "Query parameter: downloadMaxDays"
+    },
+    {
+      "key": "filter_lookbackStartTime",
+      "value": "",
+      "enabled": false,
+      "description": "Query parameter: filter_lookbackStartTime"
+    },
+    {
+      "key": "format",
+      "value": "",
+      "enabled": false,
+      "description": "Query parameter: format"
+    },
+    {
+      "key": "geoZipCode",
+      "value": "",
+      "enabled": false,
+      "description": "Query parameter: geoZipCode"
+    },
+    {
+      "key": "ifa_did",
+      "value": "",
+      "enabled": false,
+      "description": "Query parameter: ifa_did"
+    },
+    {
+      "key": "ifa_type",
+      "value": "",
+      "enabled": false,
+      "description": "Query parameter: ifa_type"
+    },
+    {
+      "key": "isBundle",
+      "value": "",
+      "enabled": false,
+      "description": "Query parameter: isBundle"
+    },
+    {
+      "key": "isDownload",
+      "value": "",
+      "enabled": false,
+      "description": "Query parameter: isDownload"
+    },
+    {
+      "key": "isFirst",
+      "value": "",
+      "enabled": false,
+      "description": "Query parameter: isFirst"
+    },
+    {
+      "key": "isTimeshift",
+      "value": "",
+      "enabled": false,
+      "description": "Query parameter: isTimeshift"
+    },
+    {
+      "key": "latitude",
+      "value": "",
+      "enabled": false,
+      "description": "Query parameter: latitude"
+    },
+    {
+      "key": "longitude",
+      "value": "",
+      "enabled": false,
+      "description": "Query parameter: longitude"
+    },
+    {
+      "key": "noToken",
+      "value": "",
+      "enabled": false,
+      "description": "Query parameter: noToken"
+    },
+    {
+      "key": "onlyToken",
+      "value": "",
+      "enabled": false,
+      "description": "Query parameter: onlyToken"
+    },
+    {
+      "key": "programId",
+      "value": "",
+      "enabled": false,
+      "description": "Query parameter: programId"
+    },
+    {
+      "key": "season",
+      "value": "",
+      "enabled": false,
+      "description": "Query parameter: season"
+    },
+    {
+      "key": "startDeltaTime",
+      "value": "",
+      "enabled": false,
+      "description": "Query parameter: startDeltaTime"
+    },
+    {
+      "key": "timeZone",
+      "value": "",
+      "enabled": false,
+      "description": "Query parameter: timeZone"
+    }
+  ],
+  "params": {
+    "appversion": {
+      "value": "T7.2",
+      "description": "Path parameter: appversion",
+      "pattern": "T7.[3-9]",
+      "type": "string",
+      "required": true
+    },
+    "cluster": {
+      "value": "R",
+      "description": "Path parameter: cluster",
+      "enum": [
+        "A",
+        "R",
+        "BTV_PRIVATE",
+        "BTV_PUBLIC",
+        "SMB_COMM",
+        "SMB_PRIVATE",
+        "SMB_PUBLIC"
+      ],
+      "required": true,
+      "type": "string"
+    },
+    "locale": {
+      "value": "ENG",
+      "description": "Path parameter: locale",
+      "enum": [
+        "ENG",
+        "FRA"
+      ],
+      "required": true,
+      "type": "string"
+    },
+    "channel": {
+      "value": "CHROME_FIREFOX_HTML5",
+      "description": "Path parameter: channel",
+      "enum": [
+        "ANDROID_TV_BYOD",
+        "ANDROID_TV_STB",
+        "ANDROID_WV1",
+        "ANDROID_WV3",
+        "CHROME_FIREFOX_HTML5",
+        "EDGE_HTML5",
+        "IOS",
+        "MR",
+        "SAFARI_HTML5",
+        "TVA",
+        "TVOS"
+      ],
+      "required": true,
+      "type": "string"
+    },
+    "propertyName": {
+      "value": "OPTIK",
+      "description": "Path parameter: propertyName",
+      "enum": [
+        "ALL",
+        "BTV",
+        "OPTIK",
+        "PIK",
+        "SPLUS"
+      ],
+      "required": true,
+      "type": "string"
+    },
+    "contentType": {
+      "value": "LIVE",
+      "description": "Path parameter: contentType",
+      "type": "string",
+      "required": true
+    },
+    "contentId": {
+      "value": "{{ifaFastChannels[1].channelId}}",
+      "description": "Path parameter: contentId",
+      "type": "string",
+      "required": true
+    },
+    "assetId": {
+      "value": "{{ifaFastChannels[1].assetIds[0]}}",
+      "description": "Path parameter: assetId",
+      "type": "string",
+      "required": true
+    }
+  },
+  "body": {
+    "type": "none",
+    "content": null
+  },
+  "auth": {
+    "type": "inherit"
+  },
+  "settings": {
+    "timeout": 30000,
+    "followRedirects": true,
+    "followOriginalMethod": false,
+    "followAuthHeader": false,
+    "maxRedirects": 10,
+    "strictSSL": true,
+    "decompress": true,
+    "includeCookies": true
+  }
+}

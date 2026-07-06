@@ -1,0 +1,8 @@
+{
+  "id": "status_code_test_mqshowcase0502",
+  "name": "Status Code Test (404)",
+  "method": "GET",
+  "url": "{{httpbin_url}}/status/404",
+  "query": [],
+  "headers": []
+}

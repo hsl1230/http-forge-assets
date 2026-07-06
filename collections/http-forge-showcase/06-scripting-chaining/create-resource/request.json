@@ -1,0 +1,18 @@
+{
+  "id": "create_resource_mqshowcase0601",
+  "name": "Create Resource (extract id)",
+  "method": "POST",
+  "url": "{{restfulapi_url}}/objects",
+  "query": [],
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "{{content_type}}",
+      "enabled": true
+    }
+  ],
+  "body": {
+    "type": "raw",
+    "format": "json"
+  }
+}

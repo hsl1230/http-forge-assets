@@ -1,0 +1,8 @@
+{
+  "id": "variables_dynamic_mqshowcase03",
+  "name": "03 - Variables & Dynamic Data",
+  "order": [
+    "dynamic-values",
+    "environment-variables"
+  ]
+}

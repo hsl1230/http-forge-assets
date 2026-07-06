@@ -1,0 +1,10 @@
+{
+  "id": "filters_pipes_secrets_mqshowcase07",
+  "name": "07 - Filters, Pipes & Secret Providers",
+  "order": [
+    "01-filter-string-encoding",
+    "02-filter-collections-json",
+    "03-filter-hash-hmac",
+    "04-secret-providers-multi"
+  ]
+}

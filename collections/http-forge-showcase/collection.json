@@ -1,0 +1,18 @@
+{
+  "id": "http_forge_showcase_mqshowcasecol",
+  "name": "HTTP Forge Showcase",
+  "description": "",
+  "variables": {},
+  "auth": {
+    "type": "none"
+  },
+  "order": [
+    "01-http-methods",
+    "02-authentication",
+    "03-variables-dynamic",
+    "04-graphql",
+    "05-advanced",
+    "06-scripting-chaining",
+    "07-filters-pipes-secrets"
+  ]
+}

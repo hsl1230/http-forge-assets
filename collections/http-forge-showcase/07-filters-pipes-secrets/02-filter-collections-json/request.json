@@ -1,0 +1,31 @@
+{
+  "id": "filter_collections_json_mqshowcase0702",
+  "name": "Filter Pipes - Arrays, Objects & JSON",
+  "method": "POST",
+  "url": "{{httpbin_url}}/anything",
+  "params": {},
+  "query": [],
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "{{CONTENT_TYPE_JSON}}",
+      "enabled": true
+    }
+  ],
+  "body": {
+    "type": "raw"
+  },
+  "auth": {
+    "type": "inherit"
+  },
+  "settings": {
+    "timeout": 30000,
+    "followRedirects": true,
+    "followOriginalMethod": false,
+    "followAuthHeader": false,
+    "maxRedirects": 10,
+    "strictSSL": true,
+    "decompress": true,
+    "includeCookies": true
+  }
+}

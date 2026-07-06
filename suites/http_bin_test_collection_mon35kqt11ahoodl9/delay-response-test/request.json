@@ -1,0 +1,33 @@
+{
+  "id": "delay_response_test_mmji3xwhvalj6p57q",
+  "name": "Delay Response Test",
+  "method": "GET",
+  "url": "{{base_url}}/delay/3",
+  "headers": [
+    {
+      "key": "test",
+      "value": "test",
+      "enabled": true,
+      "type": "string"
+    }
+  ],
+  "query": [],
+  "params": {},
+  "body": {
+    "type": "none",
+    "content": null
+  },
+  "auth": {
+    "type": "inherit"
+  },
+  "settings": {
+    "timeout": 30000,
+    "followRedirects": true,
+    "followOriginalMethod": false,
+    "followAuthHeader": false,
+    "maxRedirects": 10,
+    "strictSSL": true,
+    "decompress": true,
+    "includeCookies": true
+  }
+}

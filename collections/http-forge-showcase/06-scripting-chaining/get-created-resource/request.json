@@ -1,0 +1,26 @@
+{
+  "id": "get_created_resource_mqshowcase0602",
+  "name": "Get Created Resource (uses extracted id)",
+  "method": "GET",
+  "url": "{{restfulapi_url}}/objects/{{created_object_id}}",
+  "params": {},
+  "query": [],
+  "headers": [],
+  "body": {
+    "type": "none",
+    "content": null
+  },
+  "auth": {
+    "type": "inherit"
+  },
+  "settings": {
+    "timeout": 30000,
+    "followRedirects": true,
+    "followOriginalMethod": false,
+    "followAuthHeader": false,
+    "maxRedirects": 10,
+    "strictSSL": true,
+    "decompress": true,
+    "includeCookies": true
+  }
+}

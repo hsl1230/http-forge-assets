@@ -1,0 +1,33 @@
+{
+  "id": "user_sessions_mk1e8khtv3luol0g9",
+  "name": "USER/SESSIONS",
+  "method": "POST",
+  "url": "https://telus.sit.n.svc.tv.telus.net/TELUS/T7.2/R/ENG/ANDROID_TV_STB/OPTIK/USER/SESSIONS",
+  "headers": [
+    {
+      "key": "moreheader",
+      "value": "v2",
+      "enabled": true
+    }
+  ],
+  "query": [],
+  "params": {},
+  "body": {
+    "type": "raw",
+    "format": "json",
+    "content": "{\n    \"credentialsExtAuth\": {\n        \"deviceInfo\": {\n            \"deviceId\": \"d860c5fe-c68f-4b58-8f7d-8e82297cec7a\",\n            \"deviceIdType\": \"STBUSER02\",\n            \"deviceType\": \"IOS\",\n            \"brand\": \"TELUS\"\n        },\n        \"credentials\": {\n            \"secret\": \"{{client_secret}}\",\n            \"client_id\": \"d860c5fe-c68f-4b58-8f7d-8e82297cec7a\",\n            \"state\": \"52517642-af6a-45d5-af87-7d618015d853\",\n            \"redirect_uri\": \"http://localhost:8080\",\n            \"idp\": \"CI\"\n        }\n    }\n}\n"
+  },
+  "auth": {
+    "type": "inherit"
+  },
+  "settings": {
+    "timeout": 30000,
+    "followRedirects": true,
+    "followOriginalMethod": false,
+    "followAuthHeader": false,
+    "maxRedirects": 10,
+    "strictSSL": false,
+    "decompress": true,
+    "includeCookies": true
+  }
+}

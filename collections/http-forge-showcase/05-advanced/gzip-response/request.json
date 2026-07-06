@@ -1,0 +1,8 @@
+{
+  "id": "gzip_response_mqshowcase0505",
+  "name": "Gzip / Compressed Response",
+  "method": "GET",
+  "url": "{{httpbin_url}}/gzip",
+  "query": [],
+  "headers": []
+}

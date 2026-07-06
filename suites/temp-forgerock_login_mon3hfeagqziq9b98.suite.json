@@ -1,0 +1,43 @@
+{
+  "id": "temp-forgerock_login_mon3hfeagqziq9b98",
+  "name": "ForgeRock Login",
+  "requests": [
+    {
+      "collectionId": "forgerock_login_mjwjyb0s85esoqz7k",
+      "collectionName": "ForgeRock Login",
+      "requestId": "login_request_mjwk6n0d2kl1wc18r",
+      "name": "Login Request",
+      "method": "GET",
+      "folderPath": "",
+      "slug": "login-request"
+    },
+    {
+      "collectionId": "forgerock_login_mjwjyb0s85esoqz7k",
+      "collectionName": "ForgeRock Login",
+      "requestId": "form_submission_mk1du55uwlhodiobv",
+      "name": "Form Submission",
+      "method": "POST",
+      "folderPath": "",
+      "slug": "form-submission"
+    },
+    {
+      "collectionId": "forgerock_login_mjwjyb0s85esoqz7k",
+      "collectionName": "ForgeRock Login",
+      "requestId": "user_sessions_mk1e8khtv3luol0g9",
+      "name": "USER/SESSIONS",
+      "method": "POST",
+      "folderPath": "",
+      "slug": "user-sessions"
+    }
+  ],
+  "config": {
+    "iterations": 1,
+    "delayBetweenRequests": 0,
+    "stopOnError": false,
+    "readFromSharedSession": false,
+    "writeToSharedSession": false
+  },
+  "isTemporary": true,
+  "createdAt": 1777650960178,
+  "updatedAt": 1777651077420
+}

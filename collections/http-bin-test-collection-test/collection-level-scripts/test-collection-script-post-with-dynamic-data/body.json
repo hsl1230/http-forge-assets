@@ -1,6 +1,0 @@
-{
-  "test": "collection_scripts",
-  "collectionSession": "{{session_id}}",
-  "totalRequestsSoFar": "{{total_requests}}",
-  "timestamp": "{{$timestamp}}"
-}

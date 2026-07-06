@@ -1,0 +1,9 @@
+{
+  "id": "scripting_chaining_mqshowcase06",
+  "name": "06 - Scripting & Chaining",
+  "order": [
+    "create-resource",
+    "get-created-resource",
+    "delete-created-resource"
+  ]
+}

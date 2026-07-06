@@ -1,0 +1,12 @@
+{
+  "id": "bearer_token_mqshowcase0202",
+  "name": "Bearer Token",
+  "method": "GET",
+  "url": "{{httpbin_url}}/bearer",
+  "query": [],
+  "headers": [],
+  "auth": {
+    "type": "bearer",
+    "bearerToken": "{{demo_token}}"
+  }
+}

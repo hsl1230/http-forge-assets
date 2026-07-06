@@ -1,0 +1,73 @@
+{
+  "environment": "test",
+  "requestPath": "http_bin_test_collection_-_test_mla2knzfrm6x0no5f/HTTP Methods Tests",
+  "requestId": "post_request_with_json_body_mla2knzgyaywuu3ur",
+  "method": "POST",
+  "requests": [
+    {
+      "ticket": null,
+      "branch": "abc",
+      "environment": "test",
+      "sentRequest": {
+        "url": "https://httpbin.org/post",
+        "method": "POST",
+        "headers": {
+          "Content-Type": "application/json",
+          "X-Collection-Global": "HTTP_Forge_Test"
+        },
+        "body": {
+          "type": "raw",
+          "format": "json",
+          "content": {
+            "userId": 1001,
+            "title": "Test Post 1770771832740",
+            "body": "This is a test post with dynamic values",
+            "metadata": {
+              "source": "HTTP Forge Test",
+              "environment": "test",
+              "counter": 0
+            }
+          }
+        },
+        "params": {},
+        "query": {}
+      },
+      "originalConfig": {
+        "path": "{{base_url}}/post",
+        "params": {},
+        "query": {},
+        "headers": {
+          "Content-Type": "{{content_type}}",
+          "X-Collection-Global": "HTTP_Forge_Test"
+        },
+        "body": {
+          "type": "raw",
+          "format": "json",
+          "content": "{\n  \"userId\": {{user_id}},\n  \"title\": \"Test Post {{$timestamp}}\",\n  \"body\": \"This is a test post with dynamic values\",\n  \"metadata\": {\n    \"source\": \"HTTP Forge Test\",\n    \"environment\": \"{{environment_name}}\",\n    \"counter\": {{global_counter}}\n  }\n}"
+        }
+      },
+      "settings": {
+        "timeout": 30000,
+        "followRedirects": true,
+        "followOriginalMethod": false,
+        "followAuthHeader": false,
+        "maxRedirects": 10,
+        "strictSSL": true,
+        "decompress": true,
+        "includeCookies": true
+      },
+      "scripts": {
+        "preRequest": "// Generate unique data for POST\nconst postId = Math.floor(Math.random() * 10000);\npm.environment.set('generated_post_id', postId);\nconsole.log('Generated Post ID:', postId);",
+        "postResponse": "// Test POST request\npm.test('POST request successful', function() {\n    pm.response.to.have.status(200);\n});\n\npm.test('Response contains sent JSON', function() {\n    const responseJson = pm.response.json();\n    const requestJson = JSON.parse(pm.request.body.raw);\n    \n    pm.expect(responseJson.json.userId).to.equal(requestJson.userId);\n    pm.expect(responseJson.json.title).to.equal(requestJson.title);\n    pm.expect(responseJson.json.body).to.equal(requestJson.body);\n});\n\n// Extract and store data from response\nconst responseData = pm.response.json();\npm.environment.set('last_post_url', responseData.url);\npm.environment.set('last_post_headers', JSON.stringify(responseData.headers));"
+      },
+      "response": {
+        "status": 200,
+        "statusText": "OK",
+        "time": 299
+      },
+      "method": "POST",
+      "id": "d826a5fe-f274-427b-abcb-645eef3cc3fd",
+      "timestamp": 1770771833038
+    }
+  ]
+}

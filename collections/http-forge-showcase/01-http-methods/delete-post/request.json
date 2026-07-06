@@ -1,0 +1,8 @@
+{
+  "id": "delete_post_mqshowcase0106",
+  "name": "DELETE Post",
+  "method": "DELETE",
+  "url": "{{jsonplaceholder_url}}/posts/{{post_id}}",
+  "query": [],
+  "headers": []
+}

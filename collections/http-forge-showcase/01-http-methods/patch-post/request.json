@@ -1,0 +1,18 @@
+{
+  "id": "patch_post_mqshowcase0105",
+  "name": "PATCH Post",
+  "method": "PATCH",
+  "url": "{{jsonplaceholder_url}}/posts/{{post_id}}",
+  "query": [],
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "{{content_type}}",
+      "enabled": true
+    }
+  ],
+  "body": {
+    "type": "raw",
+    "format": "json"
+  }
+}

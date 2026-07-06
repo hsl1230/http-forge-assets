@@ -1,0 +1,174 @@
+{
+  "id": "get_T7_T2_TRAY_LIVECHANNELS",
+  "name": "get_T7_T2_TRAY/LIVECHANNELS",
+  "method": "GET",
+  "url": "{{baseUrl}}/:tenant/:appversion/:cluster/:locale/:channel/:propertyName/TRAY/LIVECHANNELS",
+  "headers": [
+    {
+      "key": "avsorighost",
+      "value": "",
+      "enabled": false,
+      "description": "Header: avsorighost"
+    },
+    {
+      "key": "clientip",
+      "value": "",
+      "enabled": false,
+      "description": "Header: clientip"
+    },
+    {
+      "key": "content-type",
+      "value": "",
+      "enabled": false,
+      "description": "Header: content-type"
+    },
+    {
+      "key": "x-forwarded-for",
+      "value": "",
+      "enabled": false,
+      "description": "Header: x-forwarded-for"
+    }
+  ],
+  "query": [
+    {
+      "key": "action",
+      "value": "",
+      "enabled": false,
+      "description": "Query parameter: action"
+    },
+    {
+      "key": "channel",
+      "value": "",
+      "enabled": false,
+      "description": "Query parameter: channel"
+    },
+    {
+      "key": "filter_regionId",
+      "value": "25",
+      "enabled": true,
+      "description": "Query parameter: filter_regionId"
+    },
+    {
+      "key": "format",
+      "value": "",
+      "enabled": false,
+      "description": "Query parameter: format"
+    },
+    {
+      "key": "from",
+      "value": "",
+      "enabled": false,
+      "description": "Query parameter: from"
+    },
+    {
+      "key": "maxResults",
+      "value": "",
+      "enabled": false,
+      "description": "Query parameter: maxResults"
+    },
+    {
+      "key": "timeZone",
+      "value": "",
+      "enabled": false,
+      "description": "Query parameter: timeZone"
+    },
+    {
+      "key": "to",
+      "value": "",
+      "enabled": false,
+      "description": "Query parameter: to"
+    }
+  ],
+  "params": {
+    "tenant": {
+      "value": "TELUS",
+      "description": "Path parameter: tenant",
+      "enum": [
+        "TELUS"
+      ],
+      "required": true,
+      "type": "string"
+    },
+    "appversion": {
+      "value": "T7.2",
+      "description": "Path parameter: appversion",
+      "pattern": "T2.\\d|T7.[0-9]",
+      "type": "string",
+      "required": true
+    },
+    "cluster": {
+      "value": "R",
+      "description": "Path parameter: cluster",
+      "enum": [
+        "A",
+        "R",
+        "BTV_PRIVATE",
+        "BTV_PUBLIC",
+        "SMB_COMM",
+        "SMB_PRIVATE",
+        "SMB_PUBLIC"
+      ],
+      "required": true,
+      "type": "string"
+    },
+    "locale": {
+      "value": "ENG",
+      "description": "Path parameter: locale",
+      "enum": [
+        "ENG",
+        "FRA"
+      ],
+      "required": true,
+      "type": "string"
+    },
+    "channel": {
+      "value": "CHROME_FIREFOX_HTML5",
+      "description": "Path parameter: channel",
+      "enum": [
+        "ANDROID_TV_BYOD",
+        "ANDROID_TV_STB",
+        "ANDROID_WV1",
+        "ANDROID_WV3",
+        "CHROME_FIREFOX_HTML5",
+        "EDGE_HTML5",
+        "IOS",
+        "MR",
+        "SAFARI_HTML5",
+        "TVA",
+        "TVOS"
+      ],
+      "required": true,
+      "type": "string"
+    },
+    "propertyName": {
+      "value": "OPTIK",
+      "description": "Path parameter: propertyName",
+      "enum": [
+        "ALL",
+        "BTV",
+        "OPTIK",
+        "PIK",
+        "SPLUS"
+      ],
+      "required": true,
+      "type": "string"
+    }
+  },
+  "body": {
+    "type": "none",
+    "content": null
+  },
+  "auth": {
+    "type": "inherit"
+  },
+  "settings": {
+    "timeout": 30000,
+    "followRedirects": true,
+    "followOriginalMethod": false,
+    "followAuthHeader": false,
+    "maxRedirects": 10,
+    "strictSSL": true,
+    "decompress": true,
+    "includeCookies": true
+  }
+}

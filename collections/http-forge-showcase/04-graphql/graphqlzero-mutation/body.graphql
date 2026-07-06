@@ -1,0 +1,5 @@
+{
+  "query": "mutation CreatePost($input: CreatePostInput!) {\n  createPost(input: $input) {\n    id\n    title\n    body\n    user {\n      id\n      name\n    }\n  }\n}",
+  "variables": "{\n  \"input\": {\n    \"title\": \"HTTP Forge Showcase {{$timestamp}}\",\n    \"body\": \"Created via GraphQL mutation from HTTP Forge\"\n  }\n}",
+  "operationName": "CreatePost"
+}

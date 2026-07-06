@@ -1,0 +1,141 @@
+{
+  "responses": {
+    "201": {
+      "description": "Created",
+      "contentType": "application/json",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "userId": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "raw": {
+            "type": "string"
+          },
+          "response": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "number"
+              },
+              "responseTime": {
+                "type": "number"
+              },
+              "headers": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "required": [
+          "title",
+          "body",
+          "userId",
+          "id"
+        ]
+      },
+      "examples": {
+        "default": {
+          "summary": "Captured from history",
+          "value": {
+            "title": "HTTP Forge Demo 1782881116600",
+            "body": "Created from the HTTP Forge Showcase collection",
+            "userId": 1,
+            "id": 101
+          }
+        }
+      },
+      "headers": {
+        "access-control-allow-credentials": {
+          "schema": {
+            "type": "string"
+          }
+        },
+        "access-control-expose-headers": {
+          "schema": {
+            "type": "string"
+          }
+        },
+        "location": {
+          "schema": {
+            "type": "string"
+          }
+        },
+        "nel": {
+          "schema": {
+            "type": "string"
+          }
+        },
+        "report-to": {
+          "schema": {
+            "type": "string"
+          }
+        },
+        "reporting-endpoints": {
+          "schema": {
+            "type": "string"
+          }
+        },
+        "via": {
+          "schema": {
+            "type": "string"
+          }
+        },
+        "x-content-type-options": {
+          "schema": {
+            "type": "string"
+          }
+        },
+        "x-powered-by": {
+          "schema": {
+            "type": "string"
+          }
+        },
+        "x-ratelimit-limit": {
+          "schema": {
+            "type": "integer"
+          }
+        },
+        "x-ratelimit-remaining": {
+          "schema": {
+            "type": "integer"
+          }
+        },
+        "x-ratelimit-reset": {
+          "schema": {
+            "type": "integer"
+          }
+        },
+        "cf-cache-status": {
+          "schema": {
+            "type": "string"
+          }
+        },
+        "server-timing": {
+          "schema": {
+            "type": "string"
+          }
+        },
+        "cf-ray": {
+          "schema": {
+            "type": "string"
+          }
+        },
+        "alt-svc": {
+          "schema": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "redirect_test_mqshowcase0503",
+  "name": "Redirect (follow)",
+  "method": "GET",
+  "url": "{{httpbin_url}}/redirect/2",
+  "query": [],
+  "headers": [],
+  "settings": {
+    "timeout": 30000,
+    "followRedirects": true,
+    "maxRedirects": 10,
+    "strictSSL": true,
+    "decompress": true,
+    "includeCookies": true
+  }
+}

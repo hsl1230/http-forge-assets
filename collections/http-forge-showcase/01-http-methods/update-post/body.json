@@ -1,0 +1,6 @@
+{
+  "id": {{post_id}},
+  "title": "{{PUT_TITLE}}",
+  "body": "{{PUT_BODY_TEXT}}",
+  "userId": {{user_id}}
+}

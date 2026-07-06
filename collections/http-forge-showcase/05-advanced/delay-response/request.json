@@ -1,0 +1,16 @@
+{
+  "id": "delay_response_mqshowcase0501",
+  "name": "Delay Response (timeout demo)",
+  "method": "GET",
+  "url": "{{httpbin_url}}/delay/3",
+  "query": [],
+  "headers": [],
+  "settings": {
+    "timeout": 10000,
+    "followRedirects": true,
+    "maxRedirects": 10,
+    "strictSSL": true,
+    "decompress": true,
+    "includeCookies": true
+  }
+}

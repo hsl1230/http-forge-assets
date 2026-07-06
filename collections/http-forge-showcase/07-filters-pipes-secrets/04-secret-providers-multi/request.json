@@ -1,0 +1,45 @@
+{
+  "id": "secret_providers_multi_mqshowcase0704",
+  "name": "Secret Providers - Multi Provider Tokens",
+  "method": "GET",
+  "url": "{{httpbin_url}}/anything/secrets?provider={{SECRET_PROVIDER_TYPE}}",
+  "query": [
+    {
+      "key": "provider",
+      "value": "{{SECRET_PROVIDER_TYPE}}",
+      "enabled": true
+    }
+  ],
+  "headers": [
+    {
+      "key": "X-Secret-Aws",
+      "value": "{{secret:aws/demo/http-forge#apiKey}}",
+      "enabled": true
+    },
+    {
+      "key": "X-Secret-Azure",
+      "value": "{{secret:azure/http-forge-demo-secret}}",
+      "enabled": true
+    },
+    {
+      "key": "X-Secret-Gcp",
+      "value": "{{secret:gcp/http-forge-demo-secret}}",
+      "enabled": true
+    },
+    {
+      "key": "X-Secret-Vault",
+      "value": "{{secret:vault/http-forge/demo#apiKey}}",
+      "enabled": true
+    },
+    {
+      "key": "X-Secret-Op",
+      "value": "{{secret:op/http-forge-demo/token}}",
+      "enabled": true
+    },
+    {
+      "key": "X-Secret-Doppler",
+      "value": "{{secret:doppler/HTTP_FORGE_DEMO_KEY}}",
+      "enabled": true
+    }
+  ]
+}

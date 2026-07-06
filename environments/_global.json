@@ -1,4 +1,13 @@
 {
-  "variables": {},
+  "variables": {
+    "tenant": "TELUS",
+    "appversion": "T7.2",
+    "cluster": "R",
+    "locale": "ENG",
+    "channel": "IOS",
+    "propertyName": "OPTIK",
+    "platform": "CHROME_FIREFOX_HTML5",
+    "clientId": "agl-web"
+  },
   "defaultHeaders": {}
 }

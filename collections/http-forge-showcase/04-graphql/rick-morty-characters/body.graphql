@@ -1,0 +1,5 @@
+{
+  "query": "query GetCharacters($page: Int!) {\n  characters(page: $page) {\n    info {\n      count\n      pages\n    }\n    results {\n      id\n      name\n      status\n      species\n    }\n  }\n}",
+  "variables": "{\n  \"page\": {{graphql_page}}\n}",
+  "operationName": "GetCharacters"
+}

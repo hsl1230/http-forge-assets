@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "storage": {
+    "format": "folder",
+    "root": ".",
+    "history": "./.http-forge-cache/histories",
+    "results": "./.http-forge-cache/results"
+  },
+  "request": {
+    "timeout": 30000,
+    "followRedirects": true,
+    "maxRedirects": 10,
+    "strictSSL": true
+  }
+}

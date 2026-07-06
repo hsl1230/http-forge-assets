@@ -1,0 +1,27 @@
+{
+  "timestamp": 1771010292630,
+  "status": 200,
+  "statusText": "OK",
+  "headers": {
+    "date": "Fri, 13 Feb 2026 19:18:12 GMT",
+    "content-type": "application/json",
+    "content-length": "289",
+    "connection": "keep-alive",
+    "server": "gunicorn/19.9.0",
+    "access-control-allow-origin": "*",
+    "access-control-allow-credentials": "true"
+  },
+  "cookies": [],
+  "body": {
+    "args": {},
+    "headers": {
+      "Accept-Encoding": "gzip, deflate",
+      "Host": "httpbin.org",
+      "X-Amzn-Trace-Id": "Root=1-698f78f4-6981e52008a915964b8ae579",
+      "X-Collection-Global": "HTTP_Forge_Test"
+    },
+    "origin": "198.166.103.166",
+    "url": "https://httpbin.org/get"
+  },
+  "time": 710
+}

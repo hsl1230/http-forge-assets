@@ -1,0 +1,11 @@
+{
+  "id": "advanced_mqshowcase05",
+  "name": "05 - Advanced Features",
+  "order": [
+    "delay-response",
+    "form-data",
+    "gzip-response",
+    "redirect-test",
+    "status-code-test"
+  ]
+}

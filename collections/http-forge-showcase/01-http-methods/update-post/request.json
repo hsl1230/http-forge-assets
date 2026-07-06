@@ -1,0 +1,18 @@
+{
+  "id": "update_post_mqshowcase0104",
+  "name": "PUT Update Post",
+  "method": "PUT",
+  "url": "{{jsonplaceholder_url}}/posts/{{post_id}}",
+  "query": [],
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "{{content_type}}",
+      "enabled": true
+    }
+  ],
+  "body": {
+    "type": "raw",
+    "format": "json"
+  }
+}

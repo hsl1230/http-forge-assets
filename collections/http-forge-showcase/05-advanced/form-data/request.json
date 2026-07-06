@@ -1,0 +1,34 @@
+{
+  "id": "form_data_mqshowcase0504",
+  "name": "Form URL-Encoded Body",
+  "method": "POST",
+  "url": "{{httpbin_url}}/post",
+  "query": [],
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "{{CONTENT_TYPE_FORM}}",
+      "enabled": true
+    }
+  ],
+  "body": {
+    "type": "x-www-form-urlencoded",
+    "content": [
+      {
+        "key": "username",
+        "value": "{{basic_user}}",
+        "enabled": true
+      },
+      {
+        "key": "role",
+        "value": "demo",
+        "enabled": true
+      },
+      {
+        "key": "requestId",
+        "value": "{{$guid}}",
+        "enabled": true
+      }
+    ]
+  }
+}

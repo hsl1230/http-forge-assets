@@ -1,0 +1,5 @@
+{
+  "query": "query GetContinent($code: ID!) {\n  continent(code: $code) {\n    name\n    countries {\n      code\n      name\n      capital\n      currency\n    }\n  }\n}",
+  "variables": "{\n  \"code\": \"{{continent_code}}\"\n}",
+  "operationName": "GetContinent"
+}

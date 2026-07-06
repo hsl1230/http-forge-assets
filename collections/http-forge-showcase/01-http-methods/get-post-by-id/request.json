@@ -1,0 +1,8 @@
+{
+  "id": "get_post_by_id_mqshowcase0102",
+  "name": "GET Post by ID",
+  "method": "GET",
+  "url": "{{jsonplaceholder_url}}/posts/{{post_id}}",
+  "query": [],
+  "headers": []
+}

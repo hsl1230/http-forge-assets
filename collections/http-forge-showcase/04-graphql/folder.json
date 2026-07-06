@@ -1,0 +1,9 @@
+{
+  "id": "graphql_mqshowcase04",
+  "name": "04 - GraphQL",
+  "order": [
+    "countries-query",
+    "graphqlzero-mutation",
+    "rick-morty-characters"
+  ]
+}

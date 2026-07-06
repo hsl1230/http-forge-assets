@@ -1,0 +1,5 @@
+{
+  "username": "{{auth_username}}",
+  "password": "{{auth_password}}",
+  "expiresInMins": {{TOKEN_EXPIRES_IN_MINS}}
+}

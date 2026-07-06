@@ -1,0 +1,53 @@
+{
+  "id": "filter_hash_hmac_mqshowcase0703",
+  "name": "Filter Pipes - Hash & HMAC",
+  "method": "GET",
+  "url": "{{httpbin_url}}/get",
+  "params": {},
+  "query": [
+    {
+      "key": "absValue",
+      "value": "{{negative_value | abs}}",
+      "enabled": true
+    },
+    {
+      "key": "idPlus",
+      "value": "{{user_id | add(99)}}",
+      "enabled": true
+    }
+  ],
+  "headers": [
+    {
+      "key": "X-Hash-Sha256",
+      "value": "{{payload_text | hash(\"sha256\", \"hex\")}}",
+      "enabled": true
+    },
+    {
+      "key": "X-Hmac-Sha256",
+      "value": "{{hmac_payload | hmac(hmac_secret, \"sha256\", \"hex\")}}",
+      "enabled": true
+    },
+    {
+      "key": "X-Formatted-Env",
+      "value": "{{@ | format(\"{1}-{2}\", environment_name, api_version)}}",
+      "enabled": true
+    }
+  ],
+  "body": {
+    "type": "none",
+    "content": null
+  },
+  "auth": {
+    "type": "inherit"
+  },
+  "settings": {
+    "timeout": 30000,
+    "followRedirects": true,
+    "followOriginalMethod": false,
+    "followAuthHeader": false,
+    "maxRedirects": 10,
+    "strictSSL": true,
+    "decompress": true,
+    "includeCookies": true
+  }
+}

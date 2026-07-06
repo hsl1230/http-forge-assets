@@ -1,0 +1,35 @@
+{
+  "id": "filter_string_encoding_mqshowcase0701",
+  "name": "Filter Pipes - String & Encoding",
+  "method": "GET",
+  "url": "{{httpbin_url}}/get?upper={{full_name | trim | upper}}&slug={{full_name | trim | lower | replace(\" \", \"-\")}}&csvLen={{csv_tags | split(\",\") | length}}",
+  "query": [
+    {
+      "key": "upper",
+      "value": "{{full_name | trim | upper}}",
+      "enabled": true
+    },
+    {
+      "key": "slug",
+      "value": "{{full_name | trim | lower | replace(\" \", \"-\")}}",
+      "enabled": true
+    },
+    {
+      "key": "csvLen",
+      "value": "{{csv_tags | split(\",\") | length}}",
+      "enabled": true
+    }
+  ],
+  "headers": [
+    {
+      "key": "X-Name-Short",
+      "value": "{{full_name | trim | substring(0, 5)}}",
+      "enabled": true
+    },
+    {
+      "key": "X-Payload-Base64",
+      "value": "{{payload_text | btoa}}",
+      "enabled": true
+    }
+  ]
+}

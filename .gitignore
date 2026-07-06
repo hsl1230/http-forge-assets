@@ -1,0 +1,9 @@
+# Local environment overrides — never commit these
+environments/*.local.json
+postman-exported-files/*.local.json
+
+# Sensitive suites and histories
+suites/forgerock_login*
+suites/temp-forgerock_login*
+shared-histories/
+

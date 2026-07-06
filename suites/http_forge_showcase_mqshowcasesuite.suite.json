@@ -1,0 +1,286 @@
+{
+  "id": "http_forge_showcase_mqshowcasesuite",
+  "name": "HTTP Forge Showcase",
+  "requests": [
+    {
+      "collectionId": "http_forge_showcase_mqshowcasecol",
+      "requestId": "get_all_posts_mqshowcase0101",
+      "name": "GET All Posts",
+      "method": "GET",
+      "collectionName": "HTTP Forge Showcase",
+      "folderPath": "01 - HTTP Methods",
+      "enabled": true,
+      "slug": "get-all-posts"
+    },
+    {
+      "collectionId": "http_forge_showcase_mqshowcasecol",
+      "requestId": "get_post_by_id_mqshowcase0102",
+      "name": "GET Post by ID",
+      "method": "GET",
+      "collectionName": "HTTP Forge Showcase",
+      "folderPath": "01 - HTTP Methods",
+      "enabled": true,
+      "slug": "get-post-by-id"
+    },
+    {
+      "collectionId": "http_forge_showcase_mqshowcasecol",
+      "requestId": "create_post_mqshowcase0103",
+      "name": "POST Create Post",
+      "method": "POST",
+      "collectionName": "HTTP Forge Showcase",
+      "folderPath": "01 - HTTP Methods",
+      "enabled": true,
+      "slug": "create-post"
+    },
+    {
+      "collectionId": "http_forge_showcase_mqshowcasecol",
+      "requestId": "update_post_mqshowcase0104",
+      "name": "PUT Update Post",
+      "method": "PUT",
+      "collectionName": "HTTP Forge Showcase",
+      "folderPath": "01 - HTTP Methods",
+      "enabled": true,
+      "slug": "update-post"
+    },
+    {
+      "collectionId": "http_forge_showcase_mqshowcasecol",
+      "requestId": "patch_post_mqshowcase0105",
+      "name": "PATCH Post",
+      "method": "PATCH",
+      "collectionName": "HTTP Forge Showcase",
+      "folderPath": "01 - HTTP Methods",
+      "enabled": true,
+      "slug": "patch-post"
+    },
+    {
+      "collectionId": "http_forge_showcase_mqshowcasecol",
+      "requestId": "delete_post_mqshowcase0106",
+      "name": "DELETE Post",
+      "method": "DELETE",
+      "collectionName": "HTTP Forge Showcase",
+      "folderPath": "01 - HTTP Methods",
+      "enabled": true,
+      "slug": "delete-post"
+    },
+    {
+      "collectionId": "http_forge_showcase_mqshowcasecol",
+      "requestId": "basic_auth_mqshowcase0201",
+      "name": "Basic Auth",
+      "method": "GET",
+      "collectionName": "HTTP Forge Showcase",
+      "folderPath": "02 - Authentication",
+      "enabled": true,
+      "slug": "basic-auth"
+    },
+    {
+      "collectionId": "http_forge_showcase_mqshowcasecol",
+      "requestId": "bearer_token_mqshowcase0202",
+      "name": "Bearer Token",
+      "method": "GET",
+      "collectionName": "HTTP Forge Showcase",
+      "folderPath": "02 - Authentication",
+      "enabled": true,
+      "slug": "bearer-token"
+    },
+    {
+      "collectionId": "http_forge_showcase_mqshowcasecol",
+      "requestId": "login_get_jwt_mqshowcase0203",
+      "name": "Login - Get JWT",
+      "method": "POST",
+      "collectionName": "HTTP Forge Showcase",
+      "folderPath": "02 - Authentication",
+      "enabled": true,
+      "slug": "login-get-jwt"
+    },
+    {
+      "collectionId": "http_forge_showcase_mqshowcasecol",
+      "requestId": "get_current_user_mqshowcase0204",
+      "name": "Get Current User (uses JWT)",
+      "method": "GET",
+      "collectionName": "HTTP Forge Showcase",
+      "folderPath": "02 - Authentication",
+      "enabled": true,
+      "slug": "get-current-user"
+    },
+    {
+      "collectionId": "http_forge_showcase_mqshowcasecol",
+      "requestId": "dynamic_values_mqshowcase0301",
+      "name": "Dynamic Values ($guid, $timestamp, $randomInt)",
+      "method": "POST",
+      "collectionName": "HTTP Forge Showcase",
+      "folderPath": "03 - Variables & Dynamic Data",
+      "enabled": true,
+      "slug": "dynamic-values"
+    },
+    {
+      "collectionId": "http_forge_showcase_mqshowcasecol",
+      "requestId": "environment_variables_mqshowcase0302",
+      "name": "Environment Variables in Headers & Query",
+      "method": "GET",
+      "collectionName": "HTTP Forge Showcase",
+      "folderPath": "03 - Variables & Dynamic Data",
+      "enabled": true,
+      "slug": "environment-variables"
+    },
+    {
+      "collectionId": "http_forge_showcase_mqshowcasecol",
+      "requestId": "countries_query_mqshowcase0401",
+      "name": "Countries Query",
+      "method": "POST",
+      "collectionName": "HTTP Forge Showcase",
+      "folderPath": "04 - GraphQL",
+      "enabled": true,
+      "slug": "countries-query"
+    },
+    {
+      "collectionId": "http_forge_showcase_mqshowcasecol",
+      "requestId": "rick_morty_characters_mqshowcase0402",
+      "name": "Rick & Morty Characters (with variables)",
+      "method": "POST",
+      "collectionName": "HTTP Forge Showcase",
+      "folderPath": "04 - GraphQL",
+      "enabled": true,
+      "slug": "rick-morty-characters"
+    },
+    {
+      "collectionId": "http_forge_showcase_mqshowcasecol",
+      "requestId": "graphqlzero_mutation_mqshowcase0403",
+      "name": "GraphQLZero - Mutation (Fetch Schema Demo)",
+      "method": "POST",
+      "collectionName": "HTTP Forge Showcase",
+      "folderPath": "04 - GraphQL",
+      "enabled": true,
+      "slug": "graphqlzero-mutation"
+    },
+    {
+      "collectionId": "http_forge_showcase_mqshowcasecol",
+      "requestId": "delay_response_mqshowcase0501",
+      "name": "Delay Response (timeout demo)",
+      "method": "GET",
+      "collectionName": "HTTP Forge Showcase",
+      "folderPath": "05 - Advanced Features",
+      "enabled": true,
+      "slug": "delay-response"
+    },
+    {
+      "collectionId": "http_forge_showcase_mqshowcasecol",
+      "requestId": "status_code_test_mqshowcase0502",
+      "name": "Status Code Test (404)",
+      "method": "GET",
+      "collectionName": "HTTP Forge Showcase",
+      "folderPath": "05 - Advanced Features",
+      "enabled": true,
+      "slug": "status-code-test"
+    },
+    {
+      "collectionId": "http_forge_showcase_mqshowcasecol",
+      "requestId": "redirect_test_mqshowcase0503",
+      "name": "Redirect (follow)",
+      "method": "GET",
+      "collectionName": "HTTP Forge Showcase",
+      "folderPath": "05 - Advanced Features",
+      "enabled": true,
+      "slug": "redirect-test"
+    },
+    {
+      "collectionId": "http_forge_showcase_mqshowcasecol",
+      "requestId": "form_data_mqshowcase0504",
+      "name": "Form URL-Encoded Body",
+      "method": "POST",
+      "collectionName": "HTTP Forge Showcase",
+      "folderPath": "05 - Advanced Features",
+      "enabled": true,
+      "slug": "form-data"
+    },
+    {
+      "collectionId": "http_forge_showcase_mqshowcasecol",
+      "requestId": "gzip_response_mqshowcase0505",
+      "name": "Gzip / Compressed Response",
+      "method": "GET",
+      "collectionName": "HTTP Forge Showcase",
+      "folderPath": "05 - Advanced Features",
+      "enabled": true,
+      "slug": "gzip-response"
+    },
+    {
+      "collectionId": "http_forge_showcase_mqshowcasecol",
+      "requestId": "create_resource_mqshowcase0601",
+      "name": "Create Resource (extract id)",
+      "method": "POST",
+      "collectionName": "HTTP Forge Showcase",
+      "folderPath": "06 - Scripting & Chaining",
+      "enabled": true,
+      "slug": "create-resource"
+    },
+    {
+      "collectionId": "http_forge_showcase_mqshowcasecol",
+      "requestId": "get_created_resource_mqshowcase0602",
+      "name": "Get Created Resource (uses extracted id)",
+      "method": "GET",
+      "collectionName": "HTTP Forge Showcase",
+      "folderPath": "06 - Scripting & Chaining",
+      "enabled": true,
+      "slug": "get-created-resource"
+    },
+    {
+      "collectionId": "http_forge_showcase_mqshowcasecol",
+      "requestId": "delete_created_resource_mqshowcase0603",
+      "name": "Delete Created Resource (cleanup)",
+      "method": "DELETE",
+      "collectionName": "HTTP Forge Showcase",
+      "folderPath": "06 - Scripting & Chaining",
+      "enabled": true,
+      "slug": "delete-created-resource"
+    },
+    {
+      "collectionId": "http_forge_showcase_mqshowcasecol",
+      "requestId": "filter_string_encoding_mqshowcase0701",
+      "name": "Filter Pipes - String & Encoding",
+      "method": "GET",
+      "collectionName": "HTTP Forge Showcase",
+      "folderPath": "07 - Filters, Pipes & Secret Providers",
+      "enabled": true,
+      "slug": "filter-string-encoding"
+    },
+    {
+      "collectionId": "http_forge_showcase_mqshowcasecol",
+      "requestId": "filter_collections_json_mqshowcase0702",
+      "name": "Filter Pipes - Arrays, Objects & JSON",
+      "method": "POST",
+      "collectionName": "HTTP Forge Showcase",
+      "folderPath": "07 - Filters, Pipes & Secret Providers",
+      "enabled": true,
+      "slug": "filter-collections-json"
+    },
+    {
+      "collectionId": "http_forge_showcase_mqshowcasecol",
+      "requestId": "filter_hash_hmac_mqshowcase0703",
+      "name": "Filter Pipes - Hash & HMAC",
+      "method": "GET",
+      "collectionName": "HTTP Forge Showcase",
+      "folderPath": "07 - Filters, Pipes & Secret Providers",
+      "enabled": true,
+      "slug": "filter-hash-hmac"
+    },
+    {
+      "collectionId": "http_forge_showcase_mqshowcasecol",
+      "requestId": "secret_providers_multi_mqshowcase0704",
+      "name": "Secret Providers - Multi Provider Tokens",
+      "method": "GET",
+      "collectionName": "HTTP Forge Showcase",
+      "folderPath": "07 - Filters, Pipes & Secret Providers",
+      "enabled": true,
+      "slug": "secret-providers-multi"
+    }
+  ],
+  "config": {
+    "iterations": 1,
+    "delay": 0,
+    "stopOnError": false,
+    "readFromSharedSession": false,
+    "writeToSharedSession": false
+  },
+  "isTemporary": false,
+  "createdAt": 1781740800000,
+  "updatedAt": 1781740800000
+}

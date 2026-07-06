@@ -1,0 +1,15 @@
+{
+  "id": "basic_auth_mqshowcase0201",
+  "name": "Basic Auth",
+  "method": "GET",
+  "url": "{{httpbin_url}}/basic-auth/{{basic_user}}/{{basic_pass}}",
+  "query": [],
+  "headers": [],
+  "auth": {
+    "type": "basic",
+    "basicAuth": {
+      "username": "{{basic_user}}",
+      "password": "{{basic_pass}}"
+    }
+  }
+}

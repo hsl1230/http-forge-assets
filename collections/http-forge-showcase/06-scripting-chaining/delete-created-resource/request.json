@@ -1,0 +1,8 @@
+{
+  "id": "delete_created_resource_mqshowcase0603",
+  "name": "Delete Created Resource (cleanup)",
+  "method": "DELETE",
+  "url": "{{restfulapi_url}}/objects/{{created_object_id}}",
+  "query": [],
+  "headers": []
+}

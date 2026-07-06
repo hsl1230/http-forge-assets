@@ -1,0 +1,32 @@
+{
+  "id": "create_post_mqshowcase0103",
+  "name": "POST Create Post",
+  "method": "POST",
+  "url": "{{jsonplaceholder_url}}/posts",
+  "params": {},
+  "query": [],
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "{{content_type}}",
+      "enabled": true
+    }
+  ],
+  "body": {
+    "type": "raw",
+    "format": "json"
+  },
+  "auth": {
+    "type": "inherit"
+  },
+  "settings": {
+    "timeout": 30000,
+    "followRedirects": true,
+    "followOriginalMethod": false,
+    "followAuthHeader": false,
+    "maxRedirects": 10,
+    "strictSSL": true,
+    "decompress": true,
+    "includeCookies": true
+  }
+}

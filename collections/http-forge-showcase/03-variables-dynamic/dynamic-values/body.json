@@ -1,0 +1,8 @@
+{
+  "requestId": "{{$guid}}",
+  "uuid": "{{$randomUUID}}",
+  "timestamp": "{{$timestamp}}",
+  "randomNumber": {{$randomInt}},
+  "randomEmail": "{{$randomEmail}}",
+  "environment": "{{environment_name}}"
+}

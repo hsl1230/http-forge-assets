@@ -1,0 +1,73 @@
+{
+  "id": "login_request_mjwk6n0d2kl1wc18r",
+  "name": "Login Request",
+  "method": "GET",
+  "url": "https://auth-gateway-pt.telus.com/as/authorization.oauth2",
+  "headers": [
+    {
+      "key": "moreheader",
+      "value": "v1",
+      "enabled": true
+    }
+  ],
+  "query": [
+    {
+      "key": "client_id",
+      "value": "d860c5fe-c68f-4b58-8f7d-8e82297cec7a",
+      "enabled": true
+    },
+    {
+      "key": "response_type",
+      "value": "code",
+      "enabled": true
+    },
+    {
+      "key": "redirect_uri",
+      "value": "http://localhost:8080",
+      "enabled": true
+    },
+    {
+      "key": "scope",
+      "value": "openid email profile",
+      "enabled": true
+    },
+    {
+      "key": "acr_values",
+      "value": "ci-loa3",
+      "enabled": true
+    },
+    {
+      "key": "service_type",
+      "value": "opus_tv_telus_json",
+      "enabled": true
+    },
+    {
+      "key": "acr",
+      "value": "ci-loa3",
+      "enabled": true
+    },
+    {
+      "key": "acr_sig",
+      "value": "9t7Rb0PPhtpHyg3i0cDGkSgiimOzTmhnCy_IJBgGUW0",
+      "enabled": true
+    }
+  ],
+  "params": {},
+  "body": {
+    "type": "none",
+    "content": null
+  },
+  "auth": {
+    "type": "inherit"
+  },
+  "settings": {
+    "timeout": 30000,
+    "followRedirects": false,
+    "followOriginalMethod": false,
+    "followAuthHeader": false,
+    "maxRedirects": 10,
+    "strictSSL": false,
+    "decompress": true,
+    "includeCookies": true
+  }
+}

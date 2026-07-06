@@ -1,0 +1,18 @@
+{
+  "id": "get_current_user_mqshowcase0204",
+  "name": "Get Current User (uses JWT)",
+  "method": "GET",
+  "url": "{{dummyjson_url}}/auth/me",
+  "query": [],
+  "headers": [
+    {
+      "key": "Authorization",
+      "value": "Bearer {{access_token}}",
+      "enabled": true
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearerToken": "{{access_token}}"
+  }
+}

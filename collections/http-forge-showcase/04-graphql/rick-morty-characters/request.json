@@ -1,0 +1,17 @@
+{
+  "id": "rick_morty_characters_mqshowcase0402",
+  "name": "Rick & Morty Characters (with variables)",
+  "method": "POST",
+  "url": "{{rickmorty_graphql_url}}",
+  "query": [],
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "{{CONTENT_TYPE_JSON}}",
+      "enabled": true
+    }
+  ],
+  "body": {
+    "type": "graphql"
+  }
+}

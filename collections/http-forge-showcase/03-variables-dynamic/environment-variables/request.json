@@ -1,0 +1,30 @@
+{
+  "id": "environment_variables_mqshowcase0302",
+  "name": "Environment Variables in Headers & Query",
+  "method": "GET",
+  "url": "{{httpbin_url}}/get?env={{environment_name}}&api={{api_version}}",
+  "query": [
+    {
+      "key": "env",
+      "value": "{{environment_name}}",
+      "enabled": true
+    },
+    {
+      "key": "api",
+      "value": "{{api_version}}",
+      "enabled": true
+    }
+  ],
+  "headers": [
+    {
+      "key": "X-Api-Version",
+      "value": "{{api_version}}",
+      "enabled": true
+    },
+    {
+      "key": "X-User-Id",
+      "value": "{{user_id}}",
+      "enabled": true
+    }
+  ]
+}

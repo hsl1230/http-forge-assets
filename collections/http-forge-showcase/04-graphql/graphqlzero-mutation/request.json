@@ -1,0 +1,17 @@
+{
+  "id": "graphqlzero_mutation_mqshowcase0403",
+  "name": "GraphQLZero - Mutation (Fetch Schema Demo)",
+  "method": "POST",
+  "url": "{{graphqlzero_url}}",
+  "query": [],
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "{{CONTENT_TYPE_JSON}}",
+      "enabled": true
+    }
+  ],
+  "body": {
+    "type": "graphql"
+  }
+}

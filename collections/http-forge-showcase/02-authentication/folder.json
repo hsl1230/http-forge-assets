@@ -1,0 +1,10 @@
+{
+  "id": "authentication_mqshowcase02",
+  "name": "02 - Authentication",
+  "order": [
+    "basic-auth",
+    "bearer-token",
+    "login-get-jwt",
+    "get-current-user"
+  ]
+}

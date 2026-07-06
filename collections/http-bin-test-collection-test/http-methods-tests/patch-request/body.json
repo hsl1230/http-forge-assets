@@ -1,5 +1,0 @@
-[
-  { "op": "replace", "path": "/status", "value": "updated" },
-  { "op": "add", "path": "/tags", "value": ["test", "patch"] },
-  { "op": "remove", "path": "/oldField" }
-]

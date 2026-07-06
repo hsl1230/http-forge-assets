@@ -1,0 +1,17 @@
+{
+  "id": "countries_query_mqshowcase0401",
+  "name": "Countries Query",
+  "method": "POST",
+  "url": "{{countries_graphql_url}}",
+  "query": [],
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "{{CONTENT_TYPE_JSON}}",
+      "enabled": true
+    }
+  ],
+  "body": {
+    "type": "graphql"
+  }
+}

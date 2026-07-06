@@ -1,0 +1,9 @@
+{
+  "name": "HTTP Forge Device {{$randomInt}}",
+  "data": {
+    "year": {{DEVICE_YEAR}},
+    "price": {{DEVICE_PRICE}},
+    "cpuModel": "{{CPU_MODEL}}",
+    "createdBy": "{{environment_name}}"
+  }
+}
